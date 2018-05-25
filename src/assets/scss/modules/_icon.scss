@@ -1,0 +1,79 @@
+@font-face {
+    font-family: "icon";
+    src: url('../font/icon.eot');
+    src: url('../font/icon.eot?#iefix') format('eot'),
+    url('../font/icon.woff2') format('woff2'),
+    url('../font/icon.woff') format('woff');
+}
+
+@mixin icon-styles {
+    display: inline-block;
+    font-family: "icon";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+    text-decoration: none;
+    text-transform: none;
+}
+
+$icon-char: (
+    "arrow-bottom": "\ea01",
+    "arrow-right2": "\ea02",
+    "arrow-step": "\ea03",
+    "arrow-top": "\ea04",
+    "close": "\ea05",
+    "play": "\ea06",
+    "slider-next": "\ea07",
+    "slider-prev": "\ea08",
+);
+
+@mixin icon($filename, $position: before, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $filename {
+            // A particular icon has been specified
+            content: map-get($icon-char, $filename);
+        }
+        @if $styles {
+            @include icon-styles;
+        }
+        // Include any extra rules supplied for the pseudo-element
+        @content;
+    }
+}
+
+.icon {
+@include icon-styles;
+}
+
+    .icon-arrow-bottom {
+        @include icon(arrow-bottom, before, false);
+    }
+    .icon-arrow-right2 {
+        @include icon(arrow-right2, before, false);
+    }
+    .icon-arrow-step {
+        @include icon(arrow-step, before, false);
+    }
+    .icon-arrow-top {
+        @include icon(arrow-top, before, false);
+    }
+    .icon-close {
+        @include icon(close, before, false);
+    }
+    .icon-play {
+        @include icon(play, before, false);
+    }
+    .icon-slider-next {
+        @include icon(slider-next, before, false);
+    }
+    .icon-slider-prev {
+        @include icon(slider-prev, before, false);
+    }

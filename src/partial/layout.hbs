@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>{{#if page.title}} {{page.title}} | Theme{{else}}Theme{{/if}}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimal-ui">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+<!--[if lt IE 10]><link rel="stylesheet" href="/assets/css/legacy-ie.css"><![endif]-->
+<script src="/assets/js/lib/modernizr.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 10]><div id="legacy-browser">
+    사용중인 브라우저는 곧 지원이 중단되는 브라우저입니다. <a href="http://windows.microsoft.com/ko-kr/internet-explorer/ie-11-worldwide-languages" target="_blank">최신 버전</a>으로 업그레이드하시거나 <a href="https://www.google.com/intl/ko/chrome/browser/" target="_blank">Chrome</a>과 같은 최신 브라우저를 이용해 주세요.
+    <button type="button" class="legacy-browser-close">닫기<i class="icon"></i></button>
+</div><![endif]-->
+<a href="#main" id="skipnav">본문 바로가기</a>
+<div id="wrap">
+    {{>header}}
+    <main id="main"{{#if page.nav}} data-nav="{{page.nav}}"{{/if}} class="main{{#if page.mainClass}} {{page.mainClass}}{{/if}}"{{#if page.style}} style="{{{page.style}}}"{{/if}}>
+        {{>@partial-block}}
+    </main>
+    {{>footer}}
+</div>
+{{>sidenav}}
+<script src="/assets/js/vendor.js"></script>
+<script src="/assets/js/common.js"></script>
+{{>script}}
+</body>
+</html>

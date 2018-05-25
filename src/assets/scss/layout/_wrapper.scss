@@ -1,0 +1,94 @@
+// --------------------------------------------------
+// wrapper
+// --------------------------------------------------
+
+div[class*="col"] {
+    //
+}
+
+// 전체 해상도 적용
+.l-wrap {
+    position: relative;
+    margin-left: percentage($p-default/$w-medium);
+    margin-right: percentage($p-default/$w-medium);
+
+    @include mq(medium) {
+        // margin-left: $m-default;
+        // margin-right: $m-default;
+    }
+    @extend %l-wrap-x-large;
+
+    // medium 해상도 직전 까지만
+    &-until-md {
+        position: relative;
+        margin-left: $p-small;
+        margin-right: $p-small;
+
+        @include mq(medium) {
+            margin: 0;
+            max-width: none;
+        }
+    }
+
+    // small 해상도 부터
+    &-sm {
+        position: relative;
+
+        @include mq($until: small) {
+            overflow: hidden;
+        }
+
+        @include mq(small) {
+            margin-left: $p-small;
+            margin-right: $p-small;
+        }
+        @extend %l-wrap-medium;
+        @extend %l-wrap-x-large;
+    }
+
+    // medium 해상도 부터
+    &-md {
+        position: relative;
+
+        @include mq($until: medium) {
+            overflow: hidden;
+        }
+        @extend %l-wrap-medium;
+        @extend %l-wrap-x-large;
+    }
+
+    // large 해상도 부터
+    &-lg {
+        position: relative;
+
+        @include mq($until: large) {
+            overflow: hidden;
+        }
+        @include mq(large) {
+            margin-left: $m-default;
+            margin-right: $m-default;
+        }
+        @extend %l-wrap-x-large;
+    }
+
+    .l-narrow {
+        position: relative;
+        max-width: 1057px;
+        margin: auto;
+    }
+}
+
+
+%l-wrap-medium {
+    @include mq(medium) {
+        margin-left: $m-default;
+        margin-right: $m-default;
+    }
+}
+%l-wrap-x-large {
+    @include mq(x-large) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: $w-wrap;
+    }
+}

@@ -1,0 +1,46 @@
+// --------------------------------------------------
+// typography > list
+// --------------------------------------------------
+
+.ul,
+.ol {
+    font-size: 14px;
+
+    > li {
+        margin-top: (0.8 / 1.4) + em;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.ul {
+    > li {
+        position: relative;
+        padding-left: (1.2 / 1.4) + em;
+
+        &:before {
+            $size: 4px;
+
+            content: "";
+            position: absolute;
+            width: $size;
+            height: $size;
+            margin-top: -($size / 2 + 2);
+            left: 0;
+            top: (1.5 / 2) + em;
+            background: $gray-dark;
+            @include radius(100%);
+        }
+    }
+}
+
+.ol {
+    padding-left: 1.4em;
+
+    > li {
+        list-style: decimal;
+        padding-left: 0.5em;
+    }
+}

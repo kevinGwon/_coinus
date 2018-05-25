@@ -1,0 +1,128 @@
+// --------------------------------------------------
+// typography > heading
+// --------------------------------------------------
+
+@mixin h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    @include break-word;
+    letter-spacing: -0.01rem;
+
+    @include mq(medium) {
+        font-size: 5.0rem;
+    }
+}
+@mixin h2 {
+    font-size: 2.6rem;
+    line-height: 1.2;
+    letter-spacing: -0.01rem;
+
+    @include mq(medium) {
+        font-size: 4.0rem;
+    }
+}
+@mixin h3 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    letter-spacing: -0.01rem;
+
+    @include mq(medium) {
+        font-size: 3.6rem;
+    }
+}
+@mixin h4 {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    letter-spacing: -0.01rem;
+
+    @include mq(medium) {
+        font-size: 3.2rem;
+    }
+}
+@mixin h5 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+
+    @include mq(medium) {
+        font-size: 2.4rem;
+        letter-spacing: -0.01rem;
+    }
+}
+@mixin h6 {
+    font-size: 1.6rem;
+
+    @include mq(medium) {
+        font-size: 2rem;
+        letter-spacing: -0.01rem;
+    }
+}
+
+h1, .h1 { @include h1; }
+h2, .h2 { @include h2; }
+h3, .h3 { @include h3; }
+h4, .h4 { @include h4; }
+h5, .h5 { @include h5; }
+h6, .h6 { @include h6; }
+
+.sub-h1,
+.sub-h2,
+.sub-h3,
+.sub-h4,
+.sub-h5,
+.sub-h6 {
+    font-family: $en;
+}
+.sub-h1 {
+    font-size: 3.6rem;
+    line-height: 1.2;
+    font-weight: bold;
+
+    @include mq(medium) {
+        font-size: 6rem;
+    }
+}
+.sub-h2 {
+    font-size: 2.6rem;
+    line-height: 1.2;
+    font-weight: bold;
+
+    @include mq(medium) {
+        font-size: 4rem;
+    }
+}
+.sub-h3 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    font-weight: bold;
+
+    @include mq(medium) {
+        font-size: 3rem;
+    }
+}
+.sub-h4 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+}
+.sub-h5 {
+    font-size: 1.4rem;
+    letter-spacing: 0.02rem;
+    line-height: 1.3;
+
+    @include mq(medium) {
+        font-size: 1.8rem;
+    }
+}
+@mixin sub-h5 {
+    font-size: 1.4rem;
+    letter-spacing: 0.02rem;
+    line-height: 1.3;
+
+    @include mq(medium) {
+        font-size: 1.8rem;
+    }
+}
+.sub-h6 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    letter-spacing: 0.02rem;
+}

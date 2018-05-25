@@ -1,0 +1,95 @@
+// --------------------------------------------------
+// Layout components
+// --------------------------------------------------
+
+// wrapper
+#wrap {
+    position: relative;
+    -webkit-user-drag: none;
+    touch-action: pan-y;
+}
+
+.main {
+    // for skipnav
+    outline: none;
+
+    @include mq(large) {
+        & {
+            padding-top: 93px;
+        }
+    }
+}
+
+// breakpoint
+#bp {
+    $bp-names: '';
+    $index: 1;
+    position: relative;
+    display: none;
+    speak: none;
+    z-index: $index;
+
+    @each $name, $point in $mq-breakpoints {
+        $index: $index + 1;
+        $bp-names: $bp-names + $name + ',';
+
+        @include mq($name)  {
+            z-index: $index;
+        }
+    }
+}
+
+// 미지원 브라우저 사용 시 메시지
+#legacy-browser {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    background-color: $brand-light;
+    color: $white;
+    font-size: 14px;
+    z-index: 1001;
+
+    p {
+        margin: 0 0 10px;
+    }
+
+    a {
+        color: $white;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    button {
+        margin-left: 5px;
+        padding: 3px 5px;
+        color: $brand-light;
+        font-weight: bold;
+        background-color: $white;
+    }
+}
+
+// skip navigation
+#skipnav {
+    position: absolute;
+    left: -100%;
+    color: #fff;
+    background: $gray;
+    font-size: 1.6em;
+}
+#skipnav:focus {
+    display: block;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 29999;
+    padding: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+}

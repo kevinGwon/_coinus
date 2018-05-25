@@ -1,0 +1,21 @@
+// --------------------------------------------------
+// fonts
+// --------------------------------------------------
+
+// font-face 선언 만들기
+@mixin font-face($family, $filename, $weight: 400) {
+    //noinspection CssUnknownTarget
+    @font-face {
+        font-family: '#{$family}';
+        font-style: normal;
+        font-weight: $weight;
+        src: url(../font/#{$filename}.eot);
+        src: url(../font/#{$filename}.woff2) format('woff2'),
+        url(../font/#{$filename}.woff) format('woff');
+    }
+}
+
+// 리스트에 있는 항목을 모두 선언
+@each $filename, $props in $font-list {
+    @include font-face(nth($props, 1), $filename, nth($props, 2));
+}

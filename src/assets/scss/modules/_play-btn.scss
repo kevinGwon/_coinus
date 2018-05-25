@@ -1,0 +1,50 @@
+// --------------------------------------------------
+// play button - 재생 아이콘 추가하기
+// --------------------------------------------------
+
+@mixin play-btn($btn-container: null, $insert: after) {
+    @if ($btn-container) {
+        #{$btn-container} {
+            @include icon(play, $insert) {
+                position: absolute;
+                color: $white;
+                line-height: 1;
+                @content;
+                @include transition(transform 0.2s);
+
+                // Win 7 IE 11에서 재생 버튼 확대/축소 애니메이션 시
+                // 버튼 우측 영역이 지저분하게 보이는 현상 수정
+                padding-right: 10px;
+                margin-right: -10px;
+            }
+        }
+        &:hover,
+        &:focus {
+            #{$btn-container} {
+                &:#{$insert} {
+                    @include transform(scale(1.1));
+                }
+            }
+        }
+    } @else {
+        @include icon(play, $insert) {
+            position: absolute;
+            color: $white;
+            line-height: 1;
+            @content;
+            @include transition(transform 0.2s);
+
+            // Win 7 IE 11에서 재생 버튼 확대/축소 애니메이션 시
+            // 버튼 우측 영역이 지저분하게 보이는 현상 수정
+            padding-right: 10px;
+            margin-right: -10px;
+        }
+
+        &:hover,
+        &:focus {
+            &:#{$insert} {
+                @include transform(scale(1.1));
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "{{fontName}}";
+    src: url('{{fontPath}}{{fontName}}.eot');
+    src: url('{{fontPath}}{{fontName}}.eot?#iefix') format('eot'),
+    url('{{fontPath}}{{fontName}}.woff2') format('woff2'),
+    url('{{fontPath}}{{fontName}}.woff') format('woff');
+}
+
+@mixin {{cssClass}}-styles {
+    display: inline-block;
+    font-family: "{{fontName}}";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+    text-decoration: none;
+    text-transform: none;
+}
+
+${{cssClass}}-char: (
+{{#each glyphs}}
+    "{{name}}": "\\{{unicode}}",
+{{/each}}
+);
+
+@mixin icon($filename, $position: before, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $filename {
+            // A particular icon has been specified
+            content: map-get(${{cssClass}}-char, $filename);
+        }
+        @if $styles {
+            @include icon-styles;
+        }
+        // Include any extra rules supplied for the pseudo-element
+        @content;
+    }
+}
+
+.{{cssClass}} {
+@include {{cssClass}}-styles;
+}
+
+{{#each glyphs}}
+    .{{../cssClass}}-{{name}} {
+        @include icon({{name}}, before, false);
+    }
+{{/each}}

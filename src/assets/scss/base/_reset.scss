@@ -1,0 +1,158 @@
+// --------------------------------------------------
+// css reset
+// --------------------------------------------------
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1em;
+    line-height: 1.5;
+}
+a {
+    text-decoration: none;
+}
+a:hover,
+a:active {
+    text-decoration: underline;
+}
+hr {
+    height: 1px;
+    margin: 1em 0;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+ul, ol, dl,
+dt, dd {
+    margin: 0;
+    padding: 0;
+}
+ul, ol, li {
+    list-style: none;
+}
+em, address {
+    font-style: normal;
+}
+figure, form {
+    margin: 0;
+}
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    vertical-align: top;
+}
+label {
+    cursor: pointer;
+}
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+}
+button {
+    -webkit-appearance: none;
+    box-sizing: content-box;
+    padding: 0;
+    border: 0 none;
+    background: transparent;
+    cursor: pointer;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    vertical-align: middle;
+}
+input[type="search"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+textarea {
+    vertical-align: top;
+    resize: vertical;
+}
+input:invalid,
+textarea:invalid {
+    background-color: #f0dddd;
+}
+table {
+    width: 100%;
+    empty-cells: show;
+}
+td {
+    vertical-align: middle;
+}
+select {
+    vertical-align: middle;
+}
+
+::-moz-selection {
+    background: $brand;
+    color: #fff;
+    text-shadow: none;
+}
+::selection {
+    background: $brand;
+    color: #fff;
+    text-shadow: none;
+}
+::-webkit-input-placeholder {
+    color: #ccc;
+}
+:-moz-placeholder {
+    color: #ccc;
+}
+mark {
+    background-color: $brand;
+}
+
+// base layout
+html {
+    min-height: 100%;
+    background-color: #fff;
+}
+body {
+    color: $gray-dark;
+    font-family: $font-default;
+    min-width: 320px;
+    letter-spacing: -0.03em;
+    -webkit-overflow-scrolling: touch;
+}
+[lang=en] {
+    font-family: $en;
+}
+input,
+textarea,
+select,
+button {
+    color: $dark;
+    font-family: $font-default;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    color: $ink;
+    font-weight: normal;
+}
+a {
+    color: $gray-dark;
+}
+p {
+    margin: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+    -ms-interpolation-mode: bicubic;
+}
+em {
+    color: $brand;
+}

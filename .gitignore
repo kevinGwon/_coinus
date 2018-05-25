@@ -1,0 +1,8 @@
+## Asset Ignore File ##
+
+# Node
+node_modules
+
+# Project
+dist
+public

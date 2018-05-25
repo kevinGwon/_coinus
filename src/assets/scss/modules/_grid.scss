@@ -1,0 +1,97 @@
+// --------------------------------------------------
+// column ( 12 grid )
+// --------------------------------------------------
+
+.row {
+    @include clearfix;
+    margin-left: -$gutter-small / 2;
+    margin-right: -$gutter-small / 2;
+
+    @include mq(medium) {
+        margin-left: -$gutter-medium / 2;
+        margin-right: -$gutter-medium / 2;
+    }
+
+    @include mq(large) {
+        margin-left: -$gutter-large / 2;
+        margin-right: -$gutter-large / 2;
+    }
+}
+
+@mixin make-grid($name: '') {
+    @if $name != '' {
+        $name: -#{$name};
+    }
+
+    @for $i from 1 through $grid-columns {
+        $width: 100% / $grid-columns * $i;
+
+        .col#{$name}-#{$i}
+        {
+            float: left;
+            width: $width;
+        }
+        .col#{$name}-offset-#{$i} {
+            margin-left: $width;
+        }
+        .col#{$name}-pull-#{$i} {
+            right: $width;
+        }
+        .col#{$name}-push-#{$i} {
+            left: $width;
+        }
+    }
+
+    .col#{$name}-offset-0 {
+        margin-left: 0;
+    }
+    .col#{$name}-pull-0 {
+        right: auto;
+    }
+    .col#{$name}-push-0 {
+        left: auto;
+    }
+}
+
+%col {
+    position: relative;
+    min-height: 1px;
+    @include box-sizing;
+    padding-left: $gutter-small / 2;
+    padding-right: $gutter-small / 2;
+}
+
+@for $i from 1 through $grid-columns {
+    .col-s-#{$i},
+    .col-#{$i},
+    .col-l-#{$i} {
+        @extend %col;
+    }
+}
+
+@include make-grid(s);
+
+@include mq(medium) {
+    @for $i from 1 through $grid-columns {
+        .col-s-#{$i},
+        .col-#{$i},
+        .col-l-#{$i} {
+            padding-left: $gutter-medium / 2;
+            padding-right: $gutter-medium / 2;
+        }
+    }
+
+    @include make-grid();
+}
+@include mq(large) {
+    @for $i from 1 through $grid-columns {
+        .col-s-#{$i},
+        .col-#{$i},
+        .col-l-#{$i} {
+            padding-left: $gutter-large / 2;
+            padding-right: $gutter-large / 2;
+        }
+    }
+
+    @include make-grid(l);
+}

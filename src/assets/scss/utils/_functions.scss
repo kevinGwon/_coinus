@@ -1,0 +1,22 @@
+/* functions
+-------------------------------------------------- */
+
+@function em($em, $context) {
+    @return #{$em / $context}em;
+}
+
+@function tint($color, $amount) {
+    @return mix($color, #fff, $amount);
+}
+
+@function shade($color, $amount) {
+    @return mix($color, #000, $amount);
+}
+
+@function legacy-direction($direction) {
+    @if($direction == 'to bottom') {
+        @return top
+    } @else if($direction == 'to right') {
+        @return left
+    }
+}

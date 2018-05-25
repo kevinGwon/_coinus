@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+// --------------------------------------------------
+// style
+// --------------------------------------------------
+
+// utilities
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/prefixes';
+@import 'utils/mixins';
+@import 'utils/fonts';
+
+// vendor style (npm dependencies)
+//noinspection CssUnknownTarget
+@import 'sass-mq/_mq.scss';
+//noinspection CssUnknownTarget
+@import 'normalize.css/normalize.css';
+//noinspection CssUnknownTarget
+@import 'slick-carousel/slick/slick.scss';
+
+// base
+@import 'base/reset';
+@import 'base/helper';
+
+// modules
+@import 'modules/icon';	// will be generated from gulp task
+@import 'modules/grid';
+@import 'modules/typography';
+@import 'modules/buttons';
+@import 'modules/common';
+@import 'modules/forms';
+@import 'modules/selectbox';
+@import 'modules/list-select';
+@import 'modules/tables';
+@import 'modules/slider';
+@import 'modules/chart';
+@import 'modules/yt-player';
+@import 'modules/play-btn';
+@import 'modules/drawdrop';
+
+// layout
+@import 'layout/components';
+@import 'layout/wrapper';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/nav';

@@ -1,0 +1,79 @@
+// --------------------------------------------------
+// chart
+// --------------------------------------------------
+
+.chart {
+    &-line {
+        height: 10px;
+        background: #f2f2f2;
+
+        .progress {
+            height: 100%;
+            background: $light-cyan;
+        }
+    }
+    &-circle {
+        @include transform(rotate(-90deg));
+
+        .circle {
+            fill: none;
+            stroke-width: 10;
+            stroke: #f2f2f2;
+            @include transform(scaleY(-1));
+            @include transform-origin(50% 50%);
+        }
+        .progress {
+            visibility: hidden;
+            stroke: $light-cyan;
+        }
+    }
+    &-bar {
+        .rect {
+            fill: $silver;
+            //@include transform(translateX(-50%));
+
+            &-h {
+                position: absolute;
+                left: 0;
+                right: 0;
+                text-align: center;
+                padding: 5px 0;
+            }
+        }
+    }
+    &-rect {
+        display: inline-block;
+        vertical-align: top;
+        @include transform(rotate(180deg));
+
+        .rect {
+            fill: $silver;
+        }
+        .progress {
+            fill: $light-cyan;
+        }
+    }
+    &-cont {
+        position: relative;
+        z-index: 10;
+        line-height: 1;
+
+        .circle-h,
+        .rect-h {
+            color: $brand-green;
+            font-size: 20px;
+            font-family: $en;
+            letter-spacing: -0.065em;
+            padding-top: 7px;
+
+            @include v-mid('span') {
+                font-size: 26px;
+                font-weight: bold;
+                margin-top: -7px;
+            }
+        }
+        .circle-h {
+            @include full-pos;
+        }
+    }
+}

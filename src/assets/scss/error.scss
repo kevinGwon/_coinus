@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+// -----------------------------------------------------------------------------
+// error
+// -----------------------------------------------------------------------------
+
+// sass helpers
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/prefixes';
+@import 'utils/mixins';
+@import 'utils/fonts';
+
+@import 'sass-mq/_mq.scss';
+@import 'base/reset';
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $warm-gray;
+}
+
+.a11y {
+    position: absolute !important;
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.error {
+    max-width: 970px;
+    margin: 0 auto;
+    padding: percentage(100/360) percentage(20/360) 0 percentage(20/360);
+    text-align: center;
+    
+    &-box {
+        position: relative;
+        z-index: 1;
+        background-color: $white;
+        font-size: 16px;
+        padding: percentage(30/360) percentage(25/360);
+    }
+    h2 {
+        color: $gray-dark;
+        font-size: 36px;
+        font-weight: bold;
+        font-family: $en;
+        margin-bottom: percentage(20/360);
+    }
+    .hp {
+        color: $dark;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .p {
+        color: $gray;
+        font-size: 16px;
+    }
+    hr {
+        height: 0;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border: 0;
+        border-bottom: 1px solid $gray-light;
+    }
+    .func {
+        margin-top: percentage(30/360);
+    }
+
+    @include mq(medium) {
+        padding: percentage(100/970) percentage(20/970) 0 percentage(20/970);
+
+        &-box {
+            padding: percentage(50/970) percentage(100/970);
+        }
+        h2 {
+            font-size: 60px;
+            margin-bottom: percentage(30/970);
+        }
+        .func {
+            margin-top: percentage(50/970);
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    color: $white;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 50px;
+    background-color: #3178C1;
+    text-decoration: none;
+
+    @include mq(medium) {
+        padding: 15px 40px;
+    }
+}

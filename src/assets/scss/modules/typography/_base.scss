@@ -1,0 +1,29 @@
+// --------------------------------------------------
+// typography > base
+// --------------------------------------------------
+
+$body1: 1.8em;
+$body2: 1.6em;
+$body3: 1.4em;
+$caption: 1.2em;
+
+p {
+    line-height: 1.5;
+}
+
+.p {
+    color: $gray-dark;
+    font-size: 1.6em;
+}
+
+.link {
+    text-decoration: underline;
+
+    &:hover {
+        color: $brand;
+    }
+}
+
+small {
+    font-size: 12px;
+}

@@ -1,0 +1,255 @@
+// --------------------------------------------------
+// buttons
+// --------------------------------------------------
+
+// ----------------------------------------
+// 버튼 크기 설정
+//
+// $height: 버튼 높이
+// $padding-side: 좌/우 padding
+// $font-size: 폰트 크기
+// $line-height: 줄 간격
+// ----------------------------------------
+@mixin button-size($height, $padding-side, $font-size, $line-height) {
+    padding: (($height - $line-height) / 2) $padding-side;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+.btn {
+    @include button-size(40px, 30px, 16px, 20px);
+    @include box-sizing;
+    display: inline-block;
+    position: relative;
+    color: $dark;
+    vertical-align: middle;
+    text-align: center;
+    letter-spacing: -0.03em;
+    border: 1px solid rgba($dark, 0.5);
+
+    > span {
+        display: inline-block;
+        @include transition(all 0.3s);
+    }
+
+    @include icon(arrow-right2, after) {
+        position: relative;
+        display: inline-block;
+        font-size: 11px;
+        width: 12px;
+        margin-left: -12px;
+        right: -12px - 8px;
+        opacity: 0;
+        @include transition(all 0.3s);
+    }
+
+    @include transition-property(color, border-color, background-color);
+    @include transition-duration(0.3s);
+    @include radius(100px);
+
+    // 마우스 오버 및 포커스
+    .no-touchevents & {
+        &:hover,
+        &:focus {
+            border-color: $dark;
+            text-decoration: none;
+
+            > span {
+                @include transform(translateX(-10px));
+            }
+            &:after {
+                @include transform(translateX(-10px));
+                opacity: 1;
+            }
+        }
+    }
+
+    // 아이콘 없음
+    &--no-icon {
+        &:after {
+            display: none;
+        }
+    }
+
+    // 비활성화
+    &[disabled],
+    &--disabled {
+        color: $silver-dark;
+        border: 1px solid rgba($dark, 0.3);
+        background-color: transparent;
+
+        .no-touchevents & {
+            &:hover,
+            &:focus {
+                border: 1px solid rgba($dark, 0.3);
+                background-color: transparent;
+
+                > span {
+                    @include transform(none !important);
+                }
+                &:after {
+                    opacity: 0;
+                    @include transform(none !important);
+                }
+            }
+        }
+    }
+
+    // 강조
+    &--em {
+        color: $white;
+        border-color: transparent;
+        background-color: rgba($brand-light, 0.8);
+
+        .no-touchevents & {
+            &:hover,
+            &:focus {
+                border-color: transparent;
+                background-color: $brand-light;
+            }
+        }
+
+        &.btn--disabled,
+        &[disabled] {
+            color: $gray-light;
+            border: 1px solid transparent;
+            background-color: rgba($silver-dark, 0.7);
+
+            .no-touchevents & {
+                &:hover,
+                &:focus {
+                    border: 1px solid transparent;
+                    background-color: rgba($silver-dark, 0.7);
+                }
+            }
+        }
+    }
+
+    // 흰색
+    &--white {
+        color: $white;
+        border-color: rgba($white, 0.5);
+
+        .no-touchevents & {
+            &:hover,
+            &:focus {
+                border-color: $white;
+                background: none;
+            }
+        }
+
+        &.btn--disabled,
+        &[disabled] {
+            color: $silver-dark;
+            border: 1px solid rgba($white, 0.5);
+
+            .no-touchevents & {
+                &:hover,
+                &:focus {
+                    border: 1px solid rgba($white, 0.5);
+                }
+            }
+        }
+    }
+
+    // 채워진 흰색
+    &--fill {
+        color: $dark;
+        border-color: transparent;
+        background-color: rgba($white, 0.8);
+
+        .no-touchevents & {
+            &:hover,
+            &:focus {
+                border-color: transparent;
+                background-color: $white;
+            }
+        }
+
+        &.btn--disabled,
+        &[disabled] {
+            color: $silver-dark;
+            border-color: transparent;
+            background-color: rgba($white, 0.7);
+
+            .no-touchevents & {
+                &:hover,
+                &:focus {
+                    border-color: transparent;
+                    background-color: rgba($white, 0.7);
+                }
+            }
+        }
+    }
+
+    // 채워진 회색 (e.g. 검색 버튼)
+    &--gray {
+        color: $white;
+        border-color: transparent;
+        background-color: rgba($gray-dark, .8);
+
+        .no-touchevents & {
+            &:hover,
+            &:focus {
+                border-color: transparent;
+                background-color: $gray-dark;
+            }
+        }
+    }
+
+    // 전체 너비 크기
+    &--block {
+        display: block;
+        width: 100%;
+    }
+
+    // 크기별
+    &--xs { // x-small
+        @include button-size(28px, 16px, 12px, 14px);
+
+        &:after {
+            right: -12px - 2px;
+            top: 1px;
+        }
+
+        .no-touchevents & {
+            &:hover,
+            &:focus {
+                > span {
+                    @include transform(translateX(-7px));
+                }
+                &:after {
+                    @include transform(translateX(-7px));
+                }
+            }
+        }
+    }
+    &--s { // small
+        @include button-size(35px, 20px, 14px, 18px);
+    }
+    &--l { // large
+        @include button-size(50px, 40px, 18px, 22px);
+    }
+
+    // medium 해상도 이상에서 medium으로 커지기
+    &--tm {
+        @include mq(medium) {
+            @include button-size(40px, 30px, 16px, 20px);
+        }
+    }
+    // medium 해상도 이상에서 large로 커지기
+    &--tl {
+        @include mq(medium) {
+            @include button-size(50px, 40px, 18px, 22px);
+        }
+    }
+}
+.func {
+    .btn + .btn {
+        margin-left: 3px;
+    }
+
+    &--center {
+        text-align: center;
+    }
+}
