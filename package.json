@@ -64,6 +64,7 @@
     "jquery-touchswipe": "^1.6.18",
     "jquery.easing": "^1.4.1",
     "masonry-layout": "^4.2.0",
+    "node-chartist": "^1.0.5",
     "normalize.css": "^7.0.0",
     "sass-mq": "^3.3.2",
     "scrollmagic": "^2.0.5",
