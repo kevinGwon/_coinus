@@ -160,8 +160,8 @@ class Common {
         let $target,
             isTargetMain = true;
 
-        if($('#content').length) {
-            $target = $('#content');
+        if($('#main').length) {
+            $target = $('#main');
             isTargetMain = false;
         } else {
             $target = IG.$main;
