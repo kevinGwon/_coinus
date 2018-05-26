@@ -17,13 +17,13 @@ $mq-breakpoints: (
 $w-small: 360px;
 $w-medium: 720px;
 $w-col-10: 970px;
-$w-default: 1280px;
+$w-default: 960px;
 
 $w-small-wrap: 320px;
 $w-wrap: $w-default;
 
 $p-small: 20px;
-$p-default: 90px;
+$p-default: 40px;
 
 $m-small: percentage($p-small/$w-small);
 $m-default: percentage($p-default/$w-default);
@@ -44,28 +44,31 @@ $z-3: 300;
 
 // fonts
 $font-list: (
-    'CJ_ONLYONE_NEW_title_Bold': ('CJ OnlyOne Bold', 700, true),
-    'CJ_ONLYONE_NEW_body_Regular': ('CJ OnlyOne', 400, true)
+	Roboto-regular: (Roboto, 400),
+
+	NotoSansCJKkr-Light-subset: (NotoSans, 100),
+	NotoSansCJKkr-Regular-subset: (NotoSans, 400),
+	NotoSansCJKkr-Medium-subset: (NotoSans, 700)
 );
 
-$font-default: 'CJ OnlyOne', sans-serif;
+$font-default: 'NotoSans', sans-serif;
 $sans: $font-default;
 $serif: serif;
-$en: $font-default;
+$en: Roboto;
 
 $font-icon: 'icon';
 $icons: ();
 
 // color guide
 $white: #fff;
-$fog: #f4f4f4;
+$fog: #ebebeb;
 $warm-gray: #f7f6f4;
 
 $silver-light: #e5e5e5;
-$silver: #ccc;
+$silver: #c1c1c1;
 $silver-dark: #999;
 
-$gray-light: #767676;
+$gray-light: #787878;
 $gray: #666;
 $gray-dark: #444;
 
@@ -75,31 +78,13 @@ $black: #000;
 
 $error: #e53935;
 
-// 브랜드 컬러
-$brand: #002d96;
-$brand-light: #0059b4;
-$brand-green: #338466;
-$brand-sliver: #b4b4b4;
-$brand-gold: #dfc486;
-$brand-desc: #3a4f9a;
+$brand: #0a2c49;
+$brand-light: #404ec8;
 
-$cool-gray: #a5a5a8;
-$light-green: #809e88;
-$light-cyan: #8cbcb8;
-$dark-blue: #8ca7bf;
-
-// 제품 라인별 컬러
-$live-left: #26b989;        // 라이브리프트
-$derma: #809e88;            // 더마이도
-$pore-reset: #80aa96;       // 포어리셋
-$pro-peeling: #a5a5a8;      // 프로필링
-$derma-trouble: #58b6b8;    // 더마트러블
-$derma-repair: #7cb0cd;     // 더마리페어
-$sun-protector: #fe7f16;    // 선프로텍터
-$sun-sensitive: #719398;    // 선센서티브
-$sun-base: #ed8596;         // 선베이스류
-$sun-fluid: #00a6da;        // 선플루이드
-$sun-stick: #4a496e;        // 선스틱류
+$pink: #cf266e;
+$blue: #16549b;
+$blue-dark: #3b5871;
+$d-blue: #082a53;
 
 // ratio
 $item-thumb: 1.2;

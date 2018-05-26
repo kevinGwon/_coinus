@@ -22,8 +22,9 @@
         margin-top: 7px;
     }
 
+    &:hover,
     &:focus {
-        border-color: $dark;
+        border-color: $blue;
     }
 
     &.is-success {
@@ -269,13 +270,13 @@ textarea {
         color: #b4b4b4;
 
         &-current {
-            color: $dark;
+            color: $gray-light;
         }
     }
 
     &.is-max {
         .counter-max {
-            color: $dark;
+            color: $gray-light;
         }
     }
 }

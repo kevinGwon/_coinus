@@ -87,13 +87,13 @@
         // 열렸을 때
         &.is-opened {
             .list-select-selector {
-                border-color: $dark;
+                border-color: $gray-light;
             }
             .list-select-popup {
                 display: block;
             }
             .list-select-options {
-                border-color: $dark;
+                border-color: $gray-light;
             }
         }
     }

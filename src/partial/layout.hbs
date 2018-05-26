@@ -18,15 +18,12 @@
 </div><![endif]-->
 <a href="#main" id="skipnav">본문 바로가기</a>
 <div id="wrap">
-    {{>header}}
-    <main id="main"{{#if page.nav}} data-nav="{{page.nav}}"{{/if}} class="main{{#if page.mainClass}} {{page.mainClass}}{{/if}}"{{#if page.style}} style="{{{page.style}}}"{{/if}}>
-        {{>@partial-block}}
-    </main>
-    {{>footer}}
+	<main id="main"{{#if page.nav}} data-nav="{{page.nav}}"{{/if}} class="main{{#if page.mainClass}} {{page.mainClass}}{{/if}}"{{#if page.style}} style="{{{page.style}}}"{{/if}}>
+		{{>@partial-block}}
+	</main>
 </div>
-{{>sidenav}}
 <script src="/assets/js/vendor.js"></script>
-<script src="/assets/js/common.js"></script>
+<!-- <script src="/assets/js/common.js"></script> -->
 {{>script}}
 </body>
 </html>

@@ -31,7 +31,7 @@
     &:after {
         content: '';
         @include full-pos;
-        background-color: rgba($dark, .2);
+        background-color: rgba($gray-light, .2);
     }
     @include icon(play) {
         position: absolute;

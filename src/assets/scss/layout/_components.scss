@@ -12,12 +12,8 @@
 .main {
     // for skipnav
     outline: none;
-
-    @include mq(large) {
-        & {
-            padding-top: 93px;
-        }
-    }
+    color: $gray-light;
+    font-size: 1.8rem;
 }
 
 // breakpoint
