@@ -1,0 +1,113 @@
+.coinus {
+  padding: 10rem 0;
+  background-image: url('../image/a/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .header {
+    margin-bottom: 10rem;
+    text-align: center;
+  }
+  .footer {
+    margin-top: 6rem;
+    color: $blue-dark;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+}
+.form-list {
+  margin-left: 85px;
+  margin-right: 143px;
+  border-top: 1px solid #dedede;
+
+  ul {
+    li {
+      &:before {
+        content: none;
+      }
+    }
+  }
+  li {
+    position: relative;
+    padding-left: 130px;
+
+    &:before {
+      top: 50%;
+      left: 5px;
+      @include transform(translateY(-50%));
+    }
+  }
+  textarea {
+    width: 100%;
+    resize: none;
+  }
+  select {
+    min-width: 300px;
+  }
+  .label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    @include transform(translateY(-50%));
+  }  
+  &-func {
+    margin-right: 117px;
+
+    .btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+    }
+  }
+  &-file {
+    .btn {
+      left: auto;
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      color: inherit;
+      @include transform(translateY(-50%));
+    }
+    label {
+      display: block;
+      position: static;
+      margin-right: -117px;
+      padding-right: 117px;
+      @include transform(translateY(0));
+
+      .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+  &-date {
+    overflow: hidden;
+    margin: 0 -21px;
+
+    .cell {
+      float: left;
+      width: 50%;
+      padding: 0 21px;
+      @include box-sizing;
+
+      &:last-child {
+        &:after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          width: 20px;
+          margin-top: -20px;
+          margin-left: -30px;
+          border-bottom: 1px solid $silver;
+        }
+      }
+    }
+  }
+}

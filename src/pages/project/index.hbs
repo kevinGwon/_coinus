@@ -1,0 +1,89 @@
+{{set
+  'page'
+}}
+{{#>layout}}
+<div class="coinus">
+  <div class="l-wrap">
+    {{>header}}
+    <div class="coinus-project">
+      <h2 class="coinus-project-title">프로젝트 내용 입력</h2>
+      <form action="">
+        <fieldset>
+          <legend class="a11y">form 1</legend>
+            <ul class="dot-list form-list">
+              <li>
+                <div class="form-list-func">
+                  <label class="label" for="input-1">내용</label>
+                  <input type="text" id="input-1" class="input-block" placeholder="아이디">
+                  <button type="button" class="btn btn--blue"><span>중복체크</span></button>
+                </div>
+              </li>
+              <li>
+                <label class="label" for="input-2">내용</label>
+                <input type="text" id="input-2" class="input-block" placeholder="아이디"> 
+              </li>
+              <li>
+                <label class="label" for="textarea-1">textarea</label>
+                <textarea name="textarea" id="textarea-1" rows="9"></textarea>
+              </li>
+              <li>
+                <div class="form-list-func form-list-file">
+                  <button type="button"><span>중복체크</span></button>
+                  <input type="file" id="file-1" class="a11y" placeholder="아이디" accept=".jpg, .jpeg, .png">
+                  <label for="file-1">
+                    <span class="input-block">image.jpg</span>
+                    <div class="btn btn--blue">찾아보기</div>
+                  </label>
+                </div>
+              </li>              
+            </ul>
+        </fieldset>
+        <fieldset>
+          <legend class="a11y">form 2</legend>
+            <ul class="dot-list form-list">
+              <li>
+                <div class="form-list-date">
+                  <div class="cell">
+                    <label class="label" for="input-3">내용</label>
+                    <input type="text" id="input-3" class="input-block" placeholder="아이디">
+                  </div>
+                  <div class="cell">
+                    <label class="label" for="input-4" class="a11y">내용</label>
+                    <input type="text" id="input-4" class="input-block" placeholder="아이디">
+                  </div>
+                </div>
+              </li>   
+              <li>
+                <label class="label" for="select">내용</label>
+                <select name="select" id="select">
+                  <option value="1">1</option>
+                  <option value="1">1</option>
+                  <option value="1">1</option>
+                  <option value="1">1</option>
+                </select>
+              </li> 
+              <li>
+                <button type="button" class="label">레퍼럴 코드 생성</button>
+                <ul class="code-list">
+                  <li>
+                    <span>보너스</span>
+                    <span>25%</span>
+                    <button type="button"></button>
+                    <span></span>
+                  </li>
+                </ul>
+              </li>            
+            </ul>
+        </fieldset>
+      </form>
+    </div>
+    {{>footer}}
+  </div>
+</div>
+{{/layout}}
+{{#*inline 'script'}}
+<script src="/assets/js/validator.js"></script>
+<script>
+  $.validate();
+</script>   
+{{/inline}}

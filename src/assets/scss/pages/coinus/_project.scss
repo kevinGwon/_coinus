@@ -1,0 +1,11 @@
+.coinus {
+  &-project {
+    background-color: $fog;
+
+    &-title {
+      background-color: $d-blue;
+      color: $white;
+      text-align: center;
+    }  
+  }
+}

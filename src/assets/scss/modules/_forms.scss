@@ -86,6 +86,7 @@
 [type="email"],
 [type="search"],
 [type="url"],
+span.input-block,
 textarea {
     @extend %form-control;
     outline: 0;
@@ -325,10 +326,10 @@ select {
     @extend %form-control;
     padding-right: 40px;
 
-    background: $white url(../img/a/arrow-bottom.svg) right 50% no-repeat;
+    background: $white url(../image/a/arrow-bottom.svg) 95% 50% no-repeat;
 
     .no-svgasimg & {
-        background-image: url(../img/a/arrow-bottom.png);
+        background-image: url(../image/a/arrow-bottom.png);
     }
 
     -webkit-appearance: none;
@@ -426,55 +427,4 @@ select {
 // 체크박스
 .checkbox {
     @extend %radio-check;
-
-    [type=checkbox] {
-        & + label {
-            &:before {
-                content: "";
-                width: 15px;
-                height: 15px;
-                border: 1px solid $gray;
-                margin-top: -9px;
-                @include radius(2px);
-                @include transition(border-color 0.2s, background-color 0.2s);
-            }
-            @include icon(checkbox-checked, after);
-        }
-        &:checked {
-            & + label {
-                &:after {
-                    color: $brand;
-                }
-            }
-        }
-    }
-
-    &--filled {
-        [type=checkbox] {
-            & + label {
-                &:before {
-                    width: 20px;
-                    height: 20px;
-                    margin-top: -11px;
-                    background: $silver;
-                    border: none;
-                }
-                &:after {
-                    color: $white;
-                    left: 1px;
-                    margin-top: -10px;
-                }
-            }
-            &:checked {
-                & + label {
-                    &:before {
-                        background: $brand-light;
-                    }
-                    &:after {
-                        color: $white;
-                    }
-                }
-            }
-        }
-    }
 }

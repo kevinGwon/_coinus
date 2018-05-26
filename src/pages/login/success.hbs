@@ -1,0 +1,36 @@
+{{set
+  'page'
+}}
+{{#>layout}}
+<div class="coinus">
+  <div class="l-wrap">
+    {{>header}}
+    <div class="coinus-login coinus-login--success">
+      <div class="coinus-login-box">
+        <div class="coinus-login-header">
+          <img src="/assets/image/a/symbol.png" alt="">
+        </div>
+        <div class="coinus-login-form">
+          <div class="cont">
+            <b class="b">감사합니다.</b>
+            <p><em class="pink">코인어스 계정이 생성되었습니다.</em></p>
+            <p>로그인하시면 토큰마켓의 서비스를 이용하실 수 있습니다.</p>
+          </div>
+          <div class="func">
+            <a href="#" class="btn btn--deepblue btn--wide btn--make">
+              <span class="btn-text">로그인 화면으로 돌아가기</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{>footer}}
+  </div>
+</div>
+{{/layout}}
+{{#*inline 'script'}}
+<script src="/assets/js/validator.js"></script>
+<script>
+  $.validate();
+</script>   
+{{/inline}}
