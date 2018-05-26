@@ -1,0 +1,29 @@
+{{set
+  'page'
+}}
+{{#>layout}}
+<div class="coinus">
+  <div class="l-wrap">
+    {{>header}}
+    <div class="coinus-project">
+      <h2 class="coinus-project-title">프로젝트 현황</h2>
+      <div class="event">
+        <div class="event-notice">
+          <h2 class="h">코인어스에 오신 것을 환영합니다.</h2>
+          <p>지금 프로젝트 등록을 하신 후 <em>코인어스의 토큰마켓</em>을 이용해보세요</p>
+        </div>
+        <div class="event-result-box">
+          <div class="event-result">현재 진행중인 프로젝트는 <em class="pink">0</em>개 입니다.</div>
+        </div>
+        <div class="func">
+          <a href="#" class="btn btn--large btn--pink"><span>토큰마켓 등록하기</span></a>
+        </div>
+      </div>
+    </div>
+    {{>footer}}
+  </div>
+</div>
+{{/layout}}
+{{#*inline 'script'}}
+  <script src="/assets/js/event.js"></script>
+{{/inline}}

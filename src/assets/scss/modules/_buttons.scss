@@ -46,49 +46,57 @@
   @include transition-duration(0.3s);
   @include radius(5px);
 
-    // 비활성화
-    &[disabled],
-    &--disabled {
-      color: $silver-dark;
-      border: 1px solid rgba($gray-light, 0.3);
-      background-color: transparent;
+  // 비활성화
+  &[disabled],
+  &--disabled {
+    color: $silver-dark;
+    border: 1px solid rgba($gray-light, 0.3);
+    background-color: transparent;
 
-      .no-touchevents & {
-        &:hover,
-        &:focus {
-          border: 1px solid rgba($gray-light, 0.3);
-          background-color: transparent;
+    .no-touchevents & {
+      &:hover,
+      &:focus {
+        border: 1px solid rgba($gray-light, 0.3);
+        background-color: transparent;
 
-          > span {
-            @include transform(none !important);
-          }
-          &:after {
-            opacity: 0;
-            @include transform(none !important);
-          }
+        > span {
+          @include transform(none !important);
+        }
+        &:after {
+          opacity: 0;
+          @include transform(none !important);
         }
       }
     }
-
-    &--wide {
-      width: 100%;
-    }
-    &--blue {
-      background-color: $blue;
-    }
-    &--deepblue {
-      background-color: $d-blue;
-    }
-    &--pink {
-      background-color: $pink;
-    }
   }
-  .func {
-    .btn + .btn {
-      margin-left: 3px;
-    }
 
-    &--center {
-      text-align: center;
-    }
+  &--wide {
+    width: 100%;
   }
+  &--large {
+    padding: 3rem 10.8rem;
+    font-size: 2.4rem;
+  }   
+  &--blue {
+    background-color: $blue;
+  }
+  &--deepblue {
+    background-color: $d-blue;
+  }
+  &--pink {
+    background-color: $pink;
+  }   
+  &--gray {
+    background-color: $gray;
+  }   
+}
+
+.func {
+.btn + .btn {
+  margin-left: 3px;
+}
+
+&--center {
+  text-align: center;
+}
+}

@@ -13,77 +13,133 @@
             <ul class="dot-list form-list">
               <li>
                 <div class="form-list-func">
-                  <label class="label" for="input-1">내용</label>
-                  <input type="text" id="input-1" class="input-block" placeholder="아이디">
+                  <label class="label" for="input-1">오너주소</label>
+                  <input type="text" id="input-1" class="input-block">
                   <button type="button" class="btn btn--blue"><span>중복체크</span></button>
                 </div>
               </li>
               <li>
-                <label class="label" for="input-2">내용</label>
-                <input type="text" id="input-2" class="input-block" placeholder="아이디"> 
+                <label class="label" for="input-2">프로젝트명</label>
+                <input type="text" id="input-2" class="input-block"> 
               </li>
-              <li>
-                <label class="label" for="textarea-1">textarea</label>
+              <li class="fixed">
+                <label class="label" for="textarea-1">프로젝트 설명</label>
                 <textarea name="textarea" id="textarea-1" rows="9"></textarea>
               </li>
               <li>
                 <div class="form-list-func form-list-file">
-                  <button type="button"><span>중복체크</span></button>
-                  <input type="file" id="file-1" class="a11y" placeholder="아이디" accept=".jpg, .jpeg, .png">
+                  <button type="button"><span>이미지/동영상</span></button>
+                  <input type="file" id="file-1" class="a11y" accept=".jpg, .jpeg, .png">
                   <label for="file-1">
                     <span class="input-block">image.jpg</span>
                     <div class="btn btn--blue">찾아보기</div>
                   </label>
                 </div>
-              </li>              
+              </li>
+              <li>
+                <label class="label" for="input-3">홈페이지</label>
+                <input type="text" id="input-3" class="input-block"> 
+              </li>
+              <li>
+                <label class="label" for="input-4">위챗</label>
+                <input type="text" id="input-4" class="input-block"> 
+              </li>
+              <li>
+                <label class="label" for="input-5">텔레그램</label>
+                <input type="text" id="input-5" class="input-block"> 
+              </li>
+              <li>
+                <label class="label" for="input-6">페이스북</label>
+                <input type="text" id="input-6" class="input-block"> 
+              </li>
+              <li>
+                <label class="label" for="input-7">트위터</label>
+                <input type="text" id="input-7" class="input-block"> 
+              </li>
+              <li>
+                <label class="label" for="input-7">라인</label>
+                <input type="text" id="input-7" class="input-block"> 
+              </li>
             </ul>
         </fieldset>
         <fieldset>
           <legend class="a11y">form 2</legend>
             <ul class="dot-list form-list">
               <li>
-                <div class="form-list-date">
+                <div class="form-list-grid">
                   <div class="cell">
-                    <label class="label" for="input-3">내용</label>
-                    <input type="text" id="input-3" class="input-block" placeholder="아이디">
+                    <label class="label" for="input-8">프로젝트 기간</label>
+                    <input type="text" id="input-8" class="input-block" value="2018년 05월 18일">
                   </div>
                   <div class="cell">
-                    <label class="label" for="input-4" class="a11y">내용</label>
-                    <input type="text" id="input-4" class="input-block" placeholder="아이디">
+                    <label class="a11y" for="input-9">내용</label>
+                    <input type="text" id="input-9" class="input-block" value="2018년 05월 18일">
                   </div>
                 </div>
               </li>   
               <li>
-                <label class="label" for="select">내용</label>
+                <label class="label" for="select">프로젝트 선택</label>
                 <select name="select" id="select">
-                  <option value="1">1</option>
-                  <option value="1">1</option>
-                  <option value="1">1</option>
-                  <option value="1">1</option>
+                  <option value="project-1">프로젝트 1</option>
+                  <option value="project-2">프로젝트 2</option>
+                  <option value="project-3">프로젝트 3</option>
+                  <option value="project-4">프로젝트 4</option>
                 </select>
+              </li>
+              <li>
+                <label class="label" for="input-10">CAP</label>
+                <input type="text" id="input-10" class="input-block" value="2,000 ETH"> 
               </li> 
               <li>
+                <label class="label" for="input-11">개인 CAP</label>
+                <input type="text" id="input-11" class="input-block" value="최소 0.001 ETH --------- 최대 100,000ETH"> 
+              </li>  
+              <li>
+                <label class="label" for="input-12">교환비율</label>
+                <input type="text" id="input-12" class="input-block" value="1ETH --------- 20,000 CNUS"> 
+              </li>              
+              <li class="fixed">
                 <button type="button" class="label">레퍼럴 코드 생성</button>
-                <ul class="code-list">
+                <ul class="form-list-code">
                   <li>
-                    <span>보너스</span>
-                    <span>25%</span>
-                    <button type="button"></button>
-                    <span></span>
+                    <div class="cell-box">
+                      <div class="cell">
+                        <span class="">
+                          <label for="code-1">보너스</label>
+                          <input type="text" id="code-1" class="input-block" value="25%">
+                          <button type="button" class="btn btn--pink">코드생성</button>
+                        </span>
+                      </div>
+                      <div class="cell">
+                        <span class="">apple354</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="cell-box">
+                      <div class="cell">
+                        <span class="">
+                          <label for="code-1">보너스</label>
+                          <input type="text" id="code-1" class="input-block" value="25%">
+                          <button type="button" class="btn btn--pink">코드생성</button>
+                        </span>
+                      </div>
+                      <div class="cell">
+                        <span class="">apple354</span>
+                      </div>
+                    </div>
                   </li>
                 </ul>
               </li>            
             </ul>
         </fieldset>
+        <div class="func">
+          <button type="submit" class="btn btn--large btn--deepblue"><span>프로젝트 등록하기</span></button>
+        </div>
       </form>
     </div>
     {{>footer}}
   </div>
 </div>
 {{/layout}}
-{{#*inline 'script'}}
-<script src="/assets/js/validator.js"></script>
-<script>
-  $.validate();
-</script>   
-{{/inline}}
+{{#*inline 'script'}}{{/inline}}

@@ -1,0 +1,94 @@
+@mixin arrow-prev {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: #747474;
+  font-weight: bold;
+  font-size: 1.2rem;
+  @include transform(translate(-50%, -50%));
+}
+@mixin arrow-next {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: #747474;
+  font-weight: bold;
+  font-size: 1.2rem;
+  @include transform(translate(-50%, -50%));
+}
+.pagination {
+  text-align: center;
+  font-size: 0;
+
+  .prev,
+  .next {
+    overflow: hidden;
+    width: 25px;
+    height: 25px;
+    color: transparent;
+    border: 1px solid #e0e0e0;
+    background-color: $white;
+  }
+  .prev {
+    position: relative;
+    margin-right: 0.5rem;
+    text-align: center;
+
+    @include icon('arrow-left2') {
+      @include arrow-prev;
+    }
+
+    &--first {
+      margin-right: 0.2rem;
+
+      @include icon('arrow-first') {
+        @include arrow-prev;
+      }
+    }
+  }
+  .next {
+    position: relative;
+    margin-left: 0.5rem;
+    text-align: center;
+
+    @include icon('arrow-right') {
+      @include arrow-next;
+    }
+
+    &--last {
+      margin-left: 0.2rem;
+
+      @include icon('arrow-last') {
+        @include arrow-next;
+      }
+    }
+  }
+  .page {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 0 0.2rem;
+    font-size: 1.2rem;
+    line-height: 25px;
+
+    &.is-current {
+      border: 1px solid #e0e0e0;
+      background-color: $pink;
+      color: $white;
+    }
+  }
+  a,
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  a {
+    &:hover {
+      color: $pink;
+
+      &:before {
+        color: $pink;
+      }
+    }
+  }
+}

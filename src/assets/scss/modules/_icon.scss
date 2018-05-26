@@ -21,13 +21,13 @@
 
 $icon-char: (
     "arrow-bottom": "\ea01",
-    "arrow-right2": "\ea02",
-    "arrow-step": "\ea03",
-    "arrow-top": "\ea04",
-    "close": "\ea05",
-    "play": "\ea06",
-    "slider-next": "\ea07",
-    "slider-prev": "\ea08",
+    "arrow-first": "\ea02",
+    "arrow-last": "\ea03",
+    "arrow-left2": "\ea04",
+    "arrow-right": "\ea05",
+    "arrow-step": "\ea06",
+    "arrow-top": "\ea07",
+    "close": "\ea08",
 );
 
 @mixin icon($filename, $position: before, $styles: true) {
@@ -56,8 +56,17 @@ $icon-char: (
     .icon-arrow-bottom {
         @include icon(arrow-bottom, before, false);
     }
-    .icon-arrow-right2 {
-        @include icon(arrow-right2, before, false);
+    .icon-arrow-first {
+        @include icon(arrow-first, before, false);
+    }
+    .icon-arrow-last {
+        @include icon(arrow-last, before, false);
+    }
+    .icon-arrow-left2 {
+        @include icon(arrow-left2, before, false);
+    }
+    .icon-arrow-right {
+        @include icon(arrow-right, before, false);
     }
     .icon-arrow-step {
         @include icon(arrow-step, before, false);
@@ -67,13 +76,4 @@ $icon-char: (
     }
     .icon-close {
         @include icon(close, before, false);
-    }
-    .icon-play {
-        @include icon(play, before, false);
-    }
-    .icon-slider-next {
-        @include icon(slider-next, before, false);
-    }
-    .icon-slider-prev {
-        @include icon(slider-prev, before, false);
     }

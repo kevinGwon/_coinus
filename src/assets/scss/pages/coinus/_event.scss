@@ -1,0 +1,119 @@
+.event {
+  padding: 8rem 6rem 27rem;
+
+  &-result-box {
+    margin-top: 7rem;
+    padding: 11.5rem 12rem;
+    border: 1px solid #bcbcbc;
+    background-color: #e9e9e9;
+  }
+  &-result {
+    text-align: center;
+    font-size: 3rem;
+
+    em {
+      display: inline-block;
+      padding: 0 0.5rem;
+      font-weight: bold;
+      font-size: 3.2rem;
+      border-bottom: 1px solid $gray-dark;
+    }
+  }
+  &-tab {
+    @include clearfix;
+    position: relative;
+    z-index: 10;
+    margin-top: 4rem;
+    border-top: 2px solid $pink;
+    border-bottom: 1px solid $silver;
+    background-color: $white;
+    font-size: 2.1rem;
+
+    a {
+      display: block;
+      float: left;
+      width: percentage(1/4);
+      padding: 1rem 2.5rem;
+      text-align: center;
+      font-weight: bold;
+      @include box-sizing;
+
+      &.is-active {
+        position: relative;
+        background-color: $pink;
+        color: $white;
+
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: -1px;
+          left: 0;
+          width: 100%;
+          border-bottom: 1px solid $pink;
+        }
+      }
+    }
+  }
+  &-list {
+    @include clearfix;
+    padding: 0 20px;
+    border-bottom: 1px solid #bcbcbc;
+    font-size: 2.1rem;
+    @include box-sizing;
+
+    li {
+      display: table;
+      table-layout: fixed;
+      position: relative;
+      z-index: 0;
+      width: 100%;
+      padding-top: 1.3rem;
+      padding-bottom: 1.3rem;
+      padding-left: 55px;
+      @include box-sizing;
+      border-top: 1px solid #dedede;
+      counter-increment: number;
+
+      &:before {
+        content: counter(number)'.'; 
+        display: block;
+        position: absolute;
+        top: 17px;
+        left: 20px;
+        font-size: 2.2rem;
+      }
+      &:first-child {
+        margin-top: -1px;
+      }
+      .cell {
+        display: table-cell;
+        width: 100%;
+        vertical-align: middle;
+
+        &:first-child {}
+        &:last-child {
+          width: 200px;
+        }
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+  &-notice {
+    text-align: center;
+
+    .h {
+      font-size: 4rem;
+    }
+    p {
+      margin-top: 3.5rem;
+      font-size: 2.7rem;
+    }
+  }
+  .pagination {
+    margin-top: 4rem;
+  }
+}
