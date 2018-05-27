@@ -1,7 +1,3 @@
-/**
- * handlebars 템플릿 컴파일
- */
-
 'use strict';
 
 const config = require('./config'),
@@ -19,7 +15,6 @@ const config = require('./config'),
 module.exports = (gulp, paths) => {
     return (done) => {
 
-        //noinspection JSUnusedGlobalSymbols
         return gulp.src([
             paths.SRC + '/*.hbs',
             paths.SRC + '/**/*.hbs',
@@ -29,7 +24,6 @@ module.exports = (gulp, paths) => {
             '!' + paths.SRC + '/**/' + config.PARTIAL + '/**/*.hbs',
             '!' + paths.ASSETS + '/**/*'
         ])
-            // 레이아웃 변경으로 인해 전체 컴파일이 필요하지 않을 때는 변경된 파일만 처리
             .pipe(gulp.isCompileAll ? noop() : cache('handlebars'))
             .pipe(handlebars(null, {
                 batch: glob.sync(paths.SRC + '/**/partial'),

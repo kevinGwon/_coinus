@@ -1,6 +1,3 @@
-/**
- * html 변경 시 bs에 반영
- */
 
 'use strict';
 

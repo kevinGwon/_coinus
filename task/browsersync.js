@@ -1,8 +1,3 @@
-/**
- * Browsersync task
- * Browsersync 서버를 실행한다. (개발 전용 task)
- */
-
 'use strict';
 
 const config = require('./config');

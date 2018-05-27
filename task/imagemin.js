@@ -1,7 +1,3 @@
-/**
- * 이미지 압축
- */
-
 'use strict';
 
 const imagemin = require('gulp-imagemin');

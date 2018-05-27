@@ -1,8 +1,3 @@
-// --------------------------------------------------
-// fonts
-// --------------------------------------------------
-
-// font-face 선언 만들기
 @mixin font-face($family, $filename, $weight: 400) {
     //noinspection CssUnknownTarget
     @font-face {
@@ -15,7 +10,6 @@
     }
 }
 
-// 리스트에 있는 항목을 모두 선언
 @each $filename, $props in $font-list {
     @include font-face(nth($props, 1), $filename, nth($props, 2));
 }

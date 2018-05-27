@@ -1,7 +1,3 @@
-/**
- * 디버그용 모듈
- */
-
 import IG from 'module/global';
 
 let gridCol = `
@@ -38,12 +34,6 @@ let $winSize = $('<div id="__debug_window_size__"></div>'),
         zIndex: 65535
     };
 
-/**
- * 문자열 반복
- * @param str
- * @param count
- * @returns {string}
- */
 function strRepeat(str, count) {
     let output = '';
 
@@ -54,9 +44,6 @@ function strRepeat(str, count) {
     return output;
 }
 
-/**
- * 리사이즈 시 윈도우 사이즈 표시
- */
 function resize() {
     clearTimeout(resizeTmr);
 
@@ -70,9 +57,6 @@ function resize() {
     }, 1500);
 }
 
-/**
- * 스크롤 시 윈도우 스크롤 위치 표시
- */
 function scroll() {
     clearTimeout(scrollTmr);
 
@@ -86,7 +70,6 @@ function scroll() {
     }, 500);
 }
 
-// 스타일 설정
 $winSize.css($.extend({}, style, {
     left: 5
 }));
@@ -100,13 +83,10 @@ $(function() {
     $winScroll.appendTo('body');
     $grid.appendTo('body');
 
-    // 윈도우 사이즈 표시
     IG.$win.on('resize._debug', resize);
 
-    // 스크롤 위치 표시
     IG.$win.on('scroll._debug', scroll);
 
-    // 그리드 표시
     IG.$doc.on('keydown._debug', function(event) {
         if(event.key === 'F9') {
             $grid.toggle();

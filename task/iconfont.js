@@ -1,8 +1,3 @@
-/**
- * iconfont
- * SVG 파일을 폰트 파일로 변환
- */
-
 'use strict';
 
 const path = require('path'),
@@ -37,7 +32,6 @@ module.exports = (gulp, paths) => {
                 return arr;
             })();
 
-        // SVG 파일로 스트림 만들기
         let iconStream = gulp.src([
             paths.ASSETS + '/icon/*.svg'
         ])
@@ -65,16 +59,10 @@ module.exports = (gulp, paths) => {
             }
         }));
 
-        // CSS 및 폰트 생성
         async.parallel([
-            /**
-             * CSS 생성
-             * @param cb
-             */
             function(cb) {
                 iconStream.on('glyphs', function(glyphs) {
                     glyphs.map(function(item) {
-                        // SVG에 할당된 문자를 hex로 변환
                         item.unicode = item.unicode[0].charCodeAt().toString(16);
 
                         return item;
@@ -95,11 +83,6 @@ module.exports = (gulp, paths) => {
                         .on('finish', cb);
                 });
             },
-
-            /**
-             * 폰트 생성
-             * @param cb
-             */
             function(cb) {
                 iconStream
                     .pipe(gulp.dest(paths.ASSETS + '/font'))

@@ -122,17 +122,16 @@
 </div>
 {{/layout}}
 {{#*inline 'script'}}
-  <script src="/assets/js/chart.js"></script>
-  <script>
-    var $a = $('.coinus-list a');
+<script>
+  var $a = $('.coinus-list a');
 
-    $a.on('click', function(e){
-      var $el = $(this);
+  $a.on('click', function(e){
+    var $el = $(this);
 
-      $el.target = "_blank";
-      window.open($el.prop('href'),'marketPopup', 'height=700,width=665');
+    $el.target = "_blank";
+    window.open($el.prop('href'),'marketPopup', 'height=700,width=665');
 
-      return false;
-    });
-  </script>
+    return false;
+  });
+</script>
 {{/inline}}

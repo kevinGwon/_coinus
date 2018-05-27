@@ -1,10 +1,4 @@
-/**
- * 전역 객체 설정 모듈
- * set global object @iropke
- */
-
 import UAParser from 'ua-parser-js';
-import 'lib/CustomEase';
 
 let IG = {};
 
@@ -74,9 +68,6 @@ IG.isNaver = (function() {
 
     return /NAVER\(inapp; search; \d+; [\d.]+\)/.test(IG.ua.ua);
 })();
-
-// 커스텀 easing
-IG.easeOut = CustomEase.create('custom', 'M0,0 C0.05,0.57 0.1,0.74 0.22,0.86 0.35,1 0.5,1 1,1');
 
 // requestAnimationFrame polyfill
 window.requestAnimationFrame = window.requestAnimationFrame ||

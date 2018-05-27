@@ -1,19 +1,12 @@
 {
-  "name": "cj-oshopping",
+  "name": "coinus",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "config": {
-    "pbs": "\\\\HOMEONE\\publishing\\cj-oshopping\\"
-  },
   "scripts": {
-    "dev": "webpack --watch",
-    "dist:js": "gulp webpack-dist:ko",
-    "dist:html": "gulp handlebars-dist:ko",
-    "dist:css": "gulp scss-dist:ko",
-    "dist": "xcopy dist %npm_package_config_pbs% /f /s /k /d /y"
+    "dev": "webpack --watch"
   },
-  "author": "kevin@iropke.com",
+  "author": "developerGwon@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "async": "^2.4.1",

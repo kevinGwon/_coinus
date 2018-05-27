@@ -1,8 +1,3 @@
-/**
- * SCSS
- * SCSS를 컴파일 하여 대상 디렉토리로 출력
- */
-
 'use strict';
 
 const sass = require('gulp-sass'),

@@ -1,6 +1,6 @@
-# cj-shopping
+# coinus
 
-cj oshopping 프로토타입 저장소
+coinus 저장소
 
 ## 환경 설치
 

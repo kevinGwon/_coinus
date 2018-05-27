@@ -1,8 +1,3 @@
-/**
- * Bless
- * IE 9 이하의 브라우저의 CSS 크기 제한으로 인해 CSS 파일 분리
- */
-
 'use strict';
 
 const bless = require('gulp-bless'),

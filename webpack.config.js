@@ -1,5 +1,3 @@
-/*! webpack.config.js © iropke, 2017 */
-
 const path = require('path'),
     webpack = require('webpack'),
     config = require('./task/config.js'),
