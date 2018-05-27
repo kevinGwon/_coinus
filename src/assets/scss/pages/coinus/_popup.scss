@@ -1,0 +1,106 @@
+.l-popup {
+  .coinus-box {
+    padding-bottom: 0;
+  }
+  .coinus-box-title {
+    padding: 2rem 3rem;
+    font-size: 2rem;
+  }
+}
+.coinus-popup {
+  padding: 3rem 2.5rem;
+  background-color: $white;
+
+  .dot-list {
+    span {
+      color: $ink;
+    }
+  }
+  .pagination-box {
+    position: relative;
+    margin-top: 2rem;
+
+    .btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0.5rem 1.4rem;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+  }
+  .func {
+    .btn {
+      padding: 0.5rem 2rem;
+      font-size: 1.3rem;
+    }
+  }
+  &-utils {
+    text-align: right;
+
+    li {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .btn {
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
+    .input-search {
+      position: relative;
+      max-width: 115px;
+
+      label {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        @include icon('search') {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          @include transform(translateY(-50%));
+        }
+      }
+    }
+  }
+  &-table {
+    margin-top: 1.5rem;
+    border: 1px solid $silver;
+    border-top: 2px solid $pink;
+    background-color: #fcfcfc;
+    border-spacing: 0;
+
+    th, td{
+      padding: 1rem 2.5rem;
+      text-align: center;
+    }
+    th {
+      color: $ink;
+    }
+    td {
+      border-top: 1px solid #e7e7e7;
+
+      &:first-child {
+        &:after {
+          content: '.';
+        }
+      }
+    }
+    tr {
+      &:last-child {
+        td {
+          padding-top: 1.5rem;
+          padding-bottom: 1.5rem;
+          text-align: right;
+
+          &:after {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.coinus {
+  &-market {
+    .dropdown {
+      color: inherit;
+      background-color: transparent;
+
+      &-box {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        border: 1px solid $silver;
+        border-top: 2px solid $pink;
+        background-color: $white;
+        font-size: 2rem;
+        @include radius(0 0 5px 5px);
+
+        &-cell {
+          display: table-cell;
+          vertical-align: middle;
+          font-size: inherit;
+
+          &:first-child {
+            width: 190px;
+          }
+        }
+        .text {
+          text-align: right; 
+        }
+      }
+      &-selector {
+        overflow: hidden;
+        padding: 1.1rem 0;
+
+        &:after {
+          top: 0;
+          right: 0;
+          height: 60px;
+          padding: 0 1.6rem;
+          line-height: 60px;
+          border-left: 1px solid $silver;
+          background-color: $white;
+          @include radius(0 0 5px 0);
+        }
+      }
+      &-text {
+        padding: 0 0.5rem;
+      }
+    }
+    .info {
+      .date {
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: 2.4rem;
+      }
+    }
+    .chart {
+      margin-top: 3.5rem;
+      text-align: center;
+
+      &--circle {
+        .ct-total,
+        .ct-value {
+          position: absolute;
+          top: 50%;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 4rem;
+          @include transform(translateY(-50%));
+        }
+        .ct-total {
+          left: 60px;
+        }
+        .ct-value {        
+          right: 60px;
+        }
+        .ct-average {
+          width: 150px;
+          height: 150px;
+          line-height: 1.2;
+          color: #acadb5;
+          font-size: 3rem;
+
+          b {
+            color: $white;
+            font-size: 4.4rem;
+          }
+        }
+        .ct-chart--circle {
+          height: 308px;
+          padding: 0 20rem;
+        }        
+      }
+      .private {
+        display: inline-block;
+        margin-top: 2.5rem;
+        padding: 0.5rem 4rem;
+        background-color: #a9a8a8;
+        color: $white;
+        font-size: 2rem;
+        @include radius(5px);
+      }
+    }  
+    .l-market {
+      padding: 4.5rem 6rem 4rem;
+      background-color: $fog;
+
+      &:last-child {
+        padding-bottom: 1.5rem;
+        
+        .coinus-list {
+          border-bottom: 0;
+
+          li {
+            &:last-child {
+              border-bottom: 1px solid #dedede;
+            }
+          }
+        }
+      }
+      &--ivory {
+        background-color: $ivory;
+      }
+    }
+  }
+}

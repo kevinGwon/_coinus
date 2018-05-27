@@ -3,45 +3,68 @@
 // --------------------------------------------------
 
 .ct {
-    &-chart {
-        position: relative;
-        max-width: 360px;
-        margin: auto;
-        text-align: center;
+  &-chart--circle {
+    position: relative;
+    text-align: center;
 
-        .ct-chart-donut {
-            overflow: visible;
-        }
+    .ct-chart-donut {
+      display: inline-block;
+      overflow: visible;
     }
-    &-chart-donut {
-        display: inline-block;
+    .ct-series-a .ct-slice-donut {
+      fill: #001b36;
+      stroke: transparent;
+      stroke-width: 0px !important;
     }
-    &-series-a &-slice-donut {
-        fill: #001b36;
-        stroke: transparent;
-        stroke-width: 0px !important;
-    }
-    &-series-b &-slice-donut {
-        stroke: #d9d9d9;
+    .ct-series-b .ct-slice-donut {
+      stroke: #d9d9d9;
     }   
-    &-series-c &-slice-donut {
-        stroke: #23b2ea;
+    .ct-series-c .ct-slice-donut {
+      stroke: #23b2ea;
     }    
-    &-average {
-        position: absolute;
-        z-index: 1;
-        top: 50%;
-        left: 50%;
-        width: 80px;
-        height: 80px;
-        color: $white;
-        font-size: 1.5rem;
-        @include v-mid;
-        @include transform(translate(-50%, -50%));
+    .ct-average {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      color: $white;
+      font-size: 1.5rem;
+      @include v-mid;
+      @include transform(translate(-50%, -50%));
 
-        b {
-            display: block;
-            font-weight: normal;
-        }
+      b {
+        display: block;
+      }
     }
+  }
+  &-chart--bar {
+    height: 25px;
+
+    .ct-grids {
+      display: none !important;
+    }
+    .ct-labels {
+      display: none !important;
+    }
+    .ct-series {
+
+      // total
+      &.ct-series-a {
+        .ct-bar {
+          stroke: $fog;
+        }
+      }
+      // value
+      &.ct-series-b {
+        .ct-bar {
+          stroke: $pink;
+        }
+      }      
+    }
+    .ct-bar {
+      stroke-width: 25px;
+    }
+  }
 }

@@ -1,0 +1,137 @@
+{{set
+  'page'
+}}
+{{#>layout}}
+<div class="coinus">
+  <div class="l-wrap">
+    {{>header}}
+    <div class="coinus-box">
+      <h2 class="coinus-box-title">실시간 마켓팅 현황</h2>
+      <div class="coinus-market">
+        <div class="l-market">
+          <div class="info">
+            <div class="date">프로젝트 기간 : 2018년 5월 28일 ~ 2018년 6월 12일</div>
+            <div class="dropdown-box">
+              <div class="dropdown-box-cell text">오너 이더리움 주소 :</div>
+              <div class="dropdown-box-cell dropdown dropdown--wide">
+                <div class="dropdown-selector">
+                  <span class="dropdown-text" title="옵션 선택" role="button">주소 선택</span>
+                </div>
+                <ul class="dropdown-option">
+                  <li class="is-current">
+                    <a href="#colorchip-86">0xsljaljdlfjalsfjklwei878sf9asf79s98sdf7fds</a>
+                  </li>
+                  <li>
+                    <a href="#colorchip-90">0xsljaljdlfjalsfjklwei878sf9asf79s98sdf7fds</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="chart chart--circle">
+              <div class="ct-chart--circle"
+              data-border="65"
+              data-value="500"
+              data-total="1000"
+              data-unit="eth"
+              >
+              </div>
+              <div lang="en" class="private">Private CAP: 0.1ETH ~~~~~ 50ETH</div>
+            </div>
+          </div>
+        </div>
+        <div class="l-market l-market--ivory">
+          <ul class="coinus-list coinus-list--chart">
+            <li>
+              <div class="cell">
+                <div class="ct-chart--bar"
+                  data-value="700"
+                  data-total="1000"
+                  data-unit="eth"
+                >
+                </div>
+              </div>
+              <div class="cell">apple354</div>
+              <div class="cell">
+                <a href="popup.html" class="btn btn--blue"><span>자세히 보기</span></a>
+              </div>
+            </li>
+            <li>
+              <div class="cell">
+                <div class="ct-chart--bar"
+                  data-value="10"
+                  data-total="56654"
+                  data-unit="eth"
+                >
+                </div>
+              </div>
+              <div class="cell">apple354</div>
+              <div class="cell">
+                <a href="popup.html" class="btn btn--blue"><span>자세히 보기</span></a>
+              </div>
+            </li>
+            <li>
+              <div class="cell">
+                <div class="ct-chart--bar"
+                  data-value="10"
+                  data-total="56654"
+                  data-unit="eth"
+                >
+                </div>
+              </div>
+              <div class="cell">apple354</div>
+              <div class="cell">
+                <a href="popup.html" class="btn btn--blue"><span>자세히 보기</span></a>
+              </div>
+            </li>
+            <li>
+              <div class="cell">
+                <div class="ct-chart--bar"
+                  data-value="53440"
+                  data-total="56654"
+                  data-unit="eth"
+                >
+                </div>
+              </div>
+              <div class="cell">apple354</div>
+              <div class="cell">
+                <a href="popup.html" class="btn btn--blue"><span>자세히 보기</span></a>
+              </div>
+            </li>
+            <li>
+              <div class="cell">
+                <div class="ct-chart--bar"
+                  data-value="20455"
+                  data-total="56654"
+                  data-unit="eth"
+                >
+                </div>
+              </div>
+              <div class="cell">apple354</div>
+              <div class="cell">
+                <a href="popup.html" class="btn btn--blue"><span>자세히 보기</span></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {{>footer}}
+  </div>
+</div>
+{{/layout}}
+{{#*inline 'script'}}
+  <script src="/assets/js/chart.js"></script>
+  <script>
+    var $a = $('.coinus-list a');
+
+    $a.on('click', function(e){
+      var $el = $(this);
+
+      $el.target = "_blank";
+      window.open($el.prop('href'),'marketPopup', 'height=700,width=665');
+
+      return false;
+    });
+  </script>
+{{/inline}}

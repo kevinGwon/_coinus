@@ -1,7 +1,7 @@
-.event {
-  padding: 8rem 6rem 27rem;
+.coinus-event {
+  padding: 8rem 6rem 19.5rem;
 
-  &-result-box {
+  &-pd {
     margin-top: 7rem;
     padding: 11.5rem 12rem;
     border: 1px solid #bcbcbc;
@@ -53,52 +53,6 @@
           width: 100%;
           border-bottom: 1px solid $pink;
         }
-      }
-    }
-  }
-  &-list {
-    @include clearfix;
-    padding: 0 20px;
-    border-bottom: 1px solid #bcbcbc;
-    font-size: 2.1rem;
-    @include box-sizing;
-
-    li {
-      display: table;
-      table-layout: fixed;
-      position: relative;
-      z-index: 0;
-      width: 100%;
-      padding-top: 1.3rem;
-      padding-bottom: 1.3rem;
-      padding-left: 55px;
-      @include box-sizing;
-      border-top: 1px solid #dedede;
-      counter-increment: number;
-
-      &:before {
-        content: counter(number)'.'; 
-        display: block;
-        position: absolute;
-        top: 17px;
-        left: 20px;
-        font-size: 2.2rem;
-      }
-      &:first-child {
-        margin-top: -1px;
-      }
-      .cell {
-        display: table-cell;
-        width: 100%;
-        vertical-align: middle;
-
-        &:first-child {}
-        &:last-child {
-          width: 200px;
-        }
-      }
-      .btn {
-        width: 100%;
       }
     }
   }

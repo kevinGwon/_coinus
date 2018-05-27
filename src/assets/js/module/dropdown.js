@@ -1,9 +1,4 @@
-/**
- * dropdown
- * @author: alice@iropke.com
- * @releases: 2017.09.20
- */
-var IG = require('../module/global');
+import IG from 'module/global';
 
 var Dropdown = (function() {
     var arrKey = [38, 40];

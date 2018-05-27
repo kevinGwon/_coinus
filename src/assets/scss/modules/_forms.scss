@@ -49,33 +49,11 @@
         background: $fog;
     }
 }
-
-.form-msg {
-    display: block;
-    margin-top: 7px;
-
-    &.is-success {
-        color: $brand-light;
-    }
-    &.is-error {
-        color: $error;
-    }
-}
-
-.form-group {
-    margin-bottom: 4px;
-
-    @include mq(medium) {
-        margin-bottom: 10px;
-    }
-}
-.form-row {
-    @include clearfix();
-
-    margin: 0 -2px;
-    > [class*=col-] {
-        padding: 0 2px;
-    }
+@mixin label-pos {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  @include transform(translateY(-50%));
 }
 
 // 입력 컨트롤
@@ -405,26 +383,183 @@ select {
     }
 }
 
-// 라디오 버튼
-.radio {
-    @extend %radio-check;
-
-    [type=radio] {
-        & + label {
-            @include icon(radio-unchecked);
-            @include icon(radio-checked, after);
-        }
-        &:checked {
-            & + label {
-                &:after {
-                    color: $black;
-                }
-            }
-        }
-    }
-}
-
 // 체크박스
 .checkbox {
     @extend %radio-check;
+}
+
+.form-list {
+  position: relative;
+  margin-left: 100px;
+  margin-right: 143px;
+  padding: 3.5rem 0;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-top: 1px solid #dedede;
+  }
+  > li {
+    position: relative;
+    padding-left: 150px;
+    margin-top: 1.5rem;
+
+    &:before {
+      top: 50%;
+      // left: -25px;
+      @include transform(translateY(-50%));
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+    &.fixed {
+      &:before {
+        top: 20px;
+      }
+      .label {
+        top: 20px;
+      }
+    }
+  }
+  ul {
+    li {
+      &:before {
+        content: none;
+      }
+    }
+  }  
+  textarea {
+    width: 100%;
+    resize: none;
+  }
+  select {
+    min-width: 300px;
+  }
+  .label {
+    @include label-pos;
+    color: inherit;
+    font-size: 2rem;
+  }  
+  &-func {
+    margin-right: 117px;
+
+    .btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+    }
+  }
+  &-file {
+    .btn {
+      left: auto;
+    }
+    button {
+      @include label-pos;
+      color: inherit;
+    }
+    label {
+      display: block;
+      position: static;
+      margin-right: -117px;
+      padding-right: 117px;
+      @include transform(translateY(0));
+
+      .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+  &-grid {
+    overflow: hidden;
+    margin: 0 -21px;
+
+    .cell {
+      float: left;
+      width: 50%;
+      padding: 0 21px;
+      @include box-sizing;
+
+      &:last-child {
+        &:after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          width: 20px;
+          margin-top: -20px;
+          margin-left: -30px;
+          border-bottom: 1px solid $silver;
+        }
+      }
+    }
+  }
+  &-code {
+    li {
+      text-align: center;
+      padding: 0;
+
+      &:first-child {
+        &:after {
+          content: '/';
+          position: absolute;
+          top: 6px;
+          left: 5px;
+        }
+      }
+      .cell-box {
+        @include clearfix;
+        margin: 0 -10px;
+      }
+      .cell {
+        float: left;
+        width: percentage(220px/587px);
+
+        &:first-child {
+          width: percentage(330px/587px);
+          margin: 0 -4px;
+        }
+        &:last-child {
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          font-size: 2rem;
+
+          span {
+            border-bottom: 1px solid #9e9e9e;
+          }
+        }
+      }
+      span {
+        display: block;
+        margin: 0 10px;
+        @include box-sizing;
+
+        label,
+        input,
+        button {
+          float: left;
+          height: 40px;
+          margin: 0 percentage(4px/330px);;
+          vertical-align: middle;
+        }
+        label {
+          width: percentage(66px/330px);
+          line-height: 40px;
+        }
+        input {
+          width: percentage(107px/330px);
+          font-size: 2rem;
+        }
+        button {
+          width: percentage(133px/330px);
+        }
+      }
+    }
+  }
 }

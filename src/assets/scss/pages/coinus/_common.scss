@@ -1,9 +1,3 @@
-@mixin label-pos {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  @include transform(translateY(-50%));
-}
 .coinus {
   padding: 10rem 0;
   background-image: url('../image/a/bg.jpg');
@@ -21,179 +15,128 @@
     font-size: 1.6rem;
     text-align: center;
   }
-}
-.form-list {
-  position: relative;
-  margin-left: 100px;
-  margin-right: 143px;
-  padding: 3.5rem 0;
+  &-box {
+    // background-color: $fog;
+    padding-bottom: 7rem;
+    background-color: $ivory;
 
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    border-top: 1px solid #dedede;
-  }
-  > li {
-    position: relative;
-    padding-left: 150px;
-    margin-top: 1.5rem;
-
-    &:before {
-      top: 50%;
-      // left: -25px;
-      @include transform(translateY(-50%));
-    }
-    &:first-child {
-      margin-top: 0;
-    }
-    &.fixed {
-      &:before {
-        top: 20px;
-      }
-      .label {
-        top: 20px;
-      }
-    }
-  }
-  ul {
-    li {
-      &:before {
-        content: none;
-      }
-    }
-  }  
-  textarea {
-    width: 100%;
-    resize: none;
-  }
-  select {
-    min-width: 300px;
-  }
-  .label {
-    @include label-pos;
-    color: inherit;
-    font-size: 2rem;
-  }  
-  &-func {
-    margin-right: 117px;
-
-    .btn {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      height: 100%;
-    }
-  }
-  &-file {
-    .btn {
-      left: auto;
-    }
-    button {
-      @include label-pos;
-      color: inherit;
-    }
-    label {
-      display: block;
-      position: static;
-      margin-right: -117px;
-      padding-right: 117px;
-      @include transform(translateY(0));
-
-      .btn {
-        position: absolute;
-        top: 0;
-        right: 0;
-      }
-    }
-  }
-  &-grid {
-    overflow: hidden;
-    margin: 0 -21px;
-
-    .cell {
-      float: left;
-      width: 50%;
-      padding: 0 21px;
-      @include box-sizing;
-
-      &:last-child {
-        &:after {
-          content: '';
-          display: inline-block;
-          position: absolute;
-          width: 20px;
-          margin-top: -20px;
-          margin-left: -30px;
-          border-bottom: 1px solid $silver;
-        }
-      }
-    }
-  }
-  &-code {
-    li {
+    &-title {
+      padding: 3rem 5rem;
+      background-color: $d-blue;
+      color: $white;
+      font-size: 3rem;
+    } 
+    .func {
+      margin-top: 4rem;
       text-align: center;
-      padding: 0;
+    }
+  }  
+  &-list {
+    @include clearfix;
+    padding: 0 20px;
+    border-bottom: 1px solid #bcbcbc;
+    font-size: 2.1rem;
+    @include box-sizing;
 
-      &:first-child {
-        &:after {
-          content: '/';
-          position: absolute;
-          top: 6px;
-          left: 5px;
-        }
+    li {
+      display: table;
+      table-layout: fixed;
+      position: relative;
+      z-index: 0;
+      width: 100%;
+      padding-top: 1.3rem;
+      padding-bottom: 1.3rem;
+      padding-left: 55px;
+      @include box-sizing;
+      border-top: 1px solid #dedede;
+      counter-increment: number;
+
+      &:before {
+        content: counter(number)'.'; 
+        display: block;
+        position: absolute;
+        top: 17px;
+        left: 20px;
+        font-size: 2.2rem;
       }
-      .cell-box {
-        @include clearfix;
-        margin: 0 -10px;
+      &:first-child {
+        border-top: 0;
       }
       .cell {
-        float: left;
-        width: percentage(220px/587px);
+        display: table-cell;
+        position: relative;
+        width: 100%;
+        vertical-align: middle;
 
-        &:first-child {
-          width: percentage(330px/587px);
-          margin: 0 -4px;
-        }
+        &:first-child {}
         &:last-child {
-          padding-top: 0.5rem;
-          padding-bottom: 0.5rem;
-          font-size: 2rem;
-
-          span {
-            border-bottom: 1px solid #9e9e9e;
-          }
+          width: 200px;
         }
       }
-      span {
-        display: block;
-        margin: 0 10px;
-        @include box-sizing;
-
-        label,
-        input,
-        button {
-          float: left;
-          height: 40px;
-          margin: 0 percentage(4px/330px);;
-          vertical-align: middle;
-        }
-        label {
-          width: percentage(66px/330px);
-          line-height: 40px;
-        }
-        input {
-          width: percentage(107px/330px);
-          font-size: 2rem;
-        }
-        button {
-          width: percentage(133px/330px);
-        }
+      .btn {
+        width: 100%;
       }
     }
-  }
+
+    &--chart {
+      li {
+
+        &:before {
+          top: 70px;
+        }
+        .cell {
+          padding: 5.5rem 0 2.5rem;
+
+          &:nth-child(2),
+          &:nth-child(3) {
+            width: 145px;
+          }
+           &:nth-child(2) {
+            padding-left: 2rem;
+           }
+        }
+      }
+      .ct-chart--bar {
+        position: relative;
+        background-color: $fog;
+        @include shadow(0 0 1px 1px rgba($silver, 0.3) inset);
+
+        .ct-value {
+          display: block;
+          color: $white;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          text-transform: uppercase;
+          text-align: center;
+          line-height: 25px;
+        }
+        .ct-average {
+          display: inline-block;
+          position: absolute;
+          top: -15px;
+          right: 0;
+          z-index: 100;
+          padding: 0.2rem 0.5rem;
+          background-color: $pink;
+          @include transform(translate(50%, -100%));
+          @include radius(3px);
+
+          &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            @include triangle(10px, $pink, 'down');
+            @include transform(translateX(-50%));
+          }
+        }
+        .ct-value {
+          background-color: $pink;
+        }
+      }        
+    }
+  }  
 }

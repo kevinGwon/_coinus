@@ -15,6 +15,11 @@ div[class*="col"] {
     padding-right: percentage($p-default/$w-medium);
 }
 
+.l-popup {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+}
 
 %l-wrap-medium {
     @include mq(medium) {
