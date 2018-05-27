@@ -1,125 +1,286 @@
-.coinus {
-  &-market {
-    .dropdown {
-      color: inherit;
-      background-color: transparent;
+.coinus-market {
+  .l-market {
+    padding: 4.5rem 6rem 4rem;
+    background-color: $fog;
 
-      &-box {
-        display: table;
-        table-layout: fixed;
-        width: 100%;
-        border: 1px solid $silver;
-        border-top: 2px solid $pink;
-        background-color: $white;
-        font-size: 2rem;
-        @include radius(0 0 5px 5px);
+    &:last-child {
+      padding-bottom: 1.5rem;
+      
+      .coinus-list {
+        border-bottom: 0;
 
-        &-cell {
-          display: table-cell;
-          vertical-align: middle;
-          font-size: inherit;
-
-          &:first-child {
-            width: 190px;
+        li {
+          &:last-child {
+            border-bottom: 1px solid #dedede;
           }
         }
-        .text {
-          text-align: right; 
+      }
+    }
+    &--ivory {
+      background-color: $ivory;
+    }
+  }    
+  .dropdown {
+    color: inherit;
+    background-color: transparent;
+
+    &-box {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      border: 1px solid $silver;
+      border-top: 2px solid $pink;
+      background-color: $white;
+      font-size: 2rem;
+      @include radius(0 0 5px 5px);
+
+      &-cell {
+        display: table-cell;
+        vertical-align: middle;
+        font-size: inherit;
+
+        &:first-child {
+          width: 190px;
         }
+      }
+      .align-right {
+        text-align: right; 
+        font-size: inherit;
+      }
+    }
+    &-selector {
+      overflow: hidden;
+      padding: 1.1rem 0;
+
+      &:after {
+        top: 0;
+        right: 0;
+        height: 60px;
+        padding: 0 1.6rem;
+        line-height: 60px;
+        border-left: 1px solid $silver;
+        background-color: $white;
+        @include radius(0 0 5px 0);
+      }
+    }
+    &-option {
+      overflow: hidden;
+
+      a {
+        @include break-word;
+      }
+    }
+    &-text {
+      padding: 0 0.5rem;
+    }
+  }
+  .info {
+    .date {
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 2.4rem;
+    }
+  }
+  .chart {
+    margin-top: 3.5rem;
+    text-align: center;
+
+    &--circle {
+      .ct-total,
+      .ct-value {
+        position: absolute;
+        top: 50%;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 4rem;
+        @include transform(translateY(-50%));
+      }
+      .ct-total {
+        left: 60px;
+        color: #c3c3c3;
+      }
+      .ct-value {        
+        right: 60px;
+      }
+      .ct-average {
+        width: 150px;
+        height: 150px;
+        line-height: 1.2;
+        color: #acadb5;
+        font-size: 3rem;
+
+        b {
+          color: $white;
+          font-size: 4.4rem;
+        }
+      }
+      .ct-chart--circle {
+        height: 308px;
+        padding: 0 20rem;
+      }        
+    }
+    .private {
+      display: inline-block;
+      margin-top: 2.5rem;
+      padding: 0.5rem 4rem;
+      background-color: #a9a8a8;
+      color: $white;
+      font-size: 2rem;
+      @include radius(5px);
+    }
+  }  
+  .ct-chart--bar {
+    position: relative;
+    background-color: $fog;
+    @include shadow(0 0 1px 1px rgba($silver, 0.3) inset);
+
+    .ct-value {
+      display: block;
+      color: $white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 25px;
+
+      &.is-invert {
+        color: $gray-light;
+
+        span {
+          color: $white;
+        }
+      }
+    }
+    .ct-average {
+      display: inline-block;
+      position: absolute;
+      top: -15px;
+      right: 0;
+      z-index: 100;
+      padding: 0.2rem 0.5rem;
+      background-color: $pink;
+      @include transform(translate(50%, -100%));
+      @include radius(3px);
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -5px;
+        @include triangle(10px, $pink, 'down');
+        @include transform(translateX(-50%));
+      }
+    }
+    .ct-value {
+      background-color: $pink;
+    }
+  }
+  @include mq($until: large) {
+    .chart {
+      &--circle {
+        .ct-total {
+          left: 0;
+        }
+        .ct-value {
+          right: 0;
+        }        
+        .ct-chart--circle {
+          height: 210px;
+          padding: 0 10rem;
+        }            
+      }   
+    }
+    .ct-chart--bar {
+      position: relative;
+      background-color: $fog;
+      @include shadow(0 0 1px 1px rgba($silver, 0.3) inset);
+
+      .ct-value {
+      }
+      .ct-average {
+      }
+      .ct-value {
+      }
+    }    
+  }
+  @include mq($until: medium) {
+    .l-market {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+    .dropdown {
+      &-box {
+        font-size: 1.4rem;
+
+        &-cell {
+          &:first-child {
+            width: 70px;
+          }
+        }
+        .align-right {
+          span {
+            display: none;
+          }
+        }      
       }
       &-selector {
-        overflow: hidden;
-        padding: 1.1rem 0;
+        min-width: auto;
 
         &:after {
-          top: 0;
-          right: 0;
-          height: 60px;
-          padding: 0 1.6rem;
-          line-height: 60px;
-          border-left: 1px solid $silver;
-          background-color: $white;
-          @include radius(0 0 5px 0);
+          padding: 0 1rem;
         }
-      }
-      &-text {
-        padding: 0 0.5rem;
       }
     }
     .info {
       .date {
-        margin-bottom: 2rem;
-        text-align: center;
-        font-size: 2.4rem;
+        font-size: 1.4rem;
       }
     }
     .chart {
-      margin-top: 3.5rem;
-      text-align: center;
-
       &--circle {
         .ct-total,
         .ct-value {
-          position: absolute;
-          top: 50%;
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: 4rem;
-          @include transform(translateY(-50%));
-        }
-        .ct-total {
-          left: 60px;
-        }
-        .ct-value {        
-          right: 60px;
+          font-size: 2.4rem;
+
+          span {
+            display: block;
+            line-height: 0.5;
+          }
         }
         .ct-average {
-          width: 150px;
-          height: 150px;
-          line-height: 1.2;
-          color: #acadb5;
-          font-size: 3rem;
+          font-size: 1.8rem;
 
           b {
-            color: $white;
-            font-size: 4.4rem;
+            font-size: 2.7rem;
           }
         }
         .ct-chart--circle {
-          height: 308px;
-          padding: 0 20rem;
-        }        
+          height: 200px;
+          padding: 0 7rem;
+        }            
       }
       .private {
-        display: inline-block;
-        margin-top: 2.5rem;
-        padding: 0.5rem 4rem;
-        background-color: #a9a8a8;
-        color: $white;
-        font-size: 2rem;
-        @include radius(5px);
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 1.3rem;
+      }      
+    }
+    .coinus-list--chart {
+      font-size: 1.3rem;
+    }
+    .ct-chart--bar {
+      .ct-average {
+        top: -10px;
       }
-    }  
-    .l-market {
-      padding: 4.5rem 6rem 4rem;
-      background-color: $fog;
-
-      &:last-child {
-        padding-bottom: 1.5rem;
-        
-        .coinus-list {
-          border-bottom: 0;
-
-          li {
-            &:last-child {
-              border-bottom: 1px solid #dedede;
-            }
-          }
-        }
+      .ct-value {
+        font-size: inherit;
       }
-      &--ivory {
-        background-color: $ivory;
-      }
+    }
+    .btn {
+      font-size: inherit;
     }
   }
 }

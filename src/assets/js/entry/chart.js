@@ -27,12 +27,16 @@ class Chart {
     average < 100 ? average : average = 100;
 
     el = `
-        <div lang="en" class="ct-total">${total}${unit}</div>
-        <div lang="en" class="ct-value">${value}${unit}</div>
+        <div lang="en" class="ct-total">${total}<span>${unit}</span></div>
+        <div lang="en" class="ct-value">${value}<span>${unit}</span></div>
         <div lang="en" class="ct-average"><span class="ct-average-cell">Total<b>${average}%</b></span></div>
     `;
 
     this.$chartCircle.append(el);
+
+    if (this.$chartCircle.data('m-border')) {
+      border = this.$chartCircle.data('m-border');
+    }
 
     $chartist = new Chartist.Pie('.ct-chart--circle', {
         series: [total, total, value]
@@ -91,12 +95,12 @@ class Chart {
       let $average = $el.find('.ct-average'),
           $value = $el.find('.ct-value');
 
-      // value < 2000 ? $value.addClass('is-invert') : '';
-      
       $value.css('width', average+'%');
 
-      setTimeout(()=>{
-      },1000);
+      // color invert
+      if(!IG.isMobile) {
+        $value.outerWidth() < 10 ? $value.addClass('is-invert') : '';
+      }
     });
   }
 }

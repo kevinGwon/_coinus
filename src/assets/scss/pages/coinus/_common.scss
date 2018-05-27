@@ -16,7 +16,6 @@
     text-align: center;
   }
   &-box {
-    // background-color: $fog;
     padding-bottom: 7rem;
     background-color: $ivory;
 
@@ -95,48 +94,62 @@
             padding-left: 2rem;
            }
         }
-      }
-      .ct-chart--bar {
-        position: relative;
-        background-color: $fog;
-        @include shadow(0 0 1px 1px rgba($silver, 0.3) inset);
+      } 
+    }
+  }
+  @include mq($until: large) {
+    &-list {
+      padding: 0;
 
-        .ct-value {
+      &--chart {
+        li {
+          .cell {
+            &:nth-child(2) {
+              width: 130px;
+            }
+            &:nth-child(3) {
+              width: 95px;
+
+              span {
+                display: none;
+              }
+            }
+          }
+        } 
+      }
+    }
+  }
+  @include mq($until: medium) {
+    &-list {
+      &--chart {
+        li {
           display: block;
-          color: $white;
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          text-transform: uppercase;
-          text-align: center;
-          line-height: 25px;
-        }
-        .ct-average {
-          display: inline-block;
-          position: absolute;
-          top: -15px;
-          right: 0;
-          z-index: 100;
-          padding: 0.2rem 0.5rem;
-          background-color: $pink;
-          @include transform(translate(50%, -100%));
-          @include radius(3px);
+          padding: 0;
 
           &:before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -5px;
-            @include triangle(10px, $pink, 'down');
-            @include transform(translateX(-50%));
+            top: 40px;
+            left: 0;
+            font-size: 1.3rem;
           }
-        }
-        .ct-value {
-          background-color: $pink;
-        }
-      }        
+          .cell {
+            padding: 3rem 0 1.5rem;
+            @include box-sizing;
+
+            &:nth-child(1) {
+              width: 45.3%;
+              padding-left: 2rem;
+            }
+            &:nth-child(2) {
+              width: 10%;
+              padding-left: 0.5rem;
+              padding-right: 0.5rem;
+            }
+            &:nth-child(3) {
+              width: 95px;
+            }
+          }
+        } 
+      }
     }
-  }  
+  }
 }

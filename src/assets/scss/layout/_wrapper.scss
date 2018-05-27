@@ -11,8 +11,8 @@ div[class*="col"] {
     position: relative;
     max-width: $w-default;
     margin: auto;
-    padding-left: percentage($p-default/$w-medium);
-    padding-right: percentage($p-default/$w-medium);
+    padding-left: percentage(($p-default/2)/$w-medium);
+    padding-right: percentage(($p-default/2)/$w-medium);
 }
 
 .l-popup {
