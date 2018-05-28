@@ -98,11 +98,11 @@
         @include transform(translateY(-50%));
       }
       .ct-total {
-        left: 60px;
+        left: 0;
         color: #c3c3c3;
       }
       .ct-value {        
-        right: 60px;
+        right: 0;
       }
       .ct-average {
         width: 150px;
@@ -183,6 +183,13 @@
   @include mq($until: large) {
     .chart {
       &--circle {
+        .ct-total,
+        .ct-value {
+          span {
+            display: block;
+            line-height: 0.5;
+          }
+        }
         .ct-total {
           left: 0;
         }
@@ -190,9 +197,13 @@
           right: 0;
         }        
         .ct-chart--circle {
-          height: 210px;
           padding: 0 10rem;
-        }            
+        }        
+
+         // path
+         .ct-slice-donut {
+          stroke-width: 50px !important;
+        }
       }   
     }
     .ct-chart--bar {
@@ -233,11 +244,37 @@
     .chart {
       &--circle {
         margin-top: 0;
+
+        .ct-chart--circle {
+          height: 210px;
+        }
+        .ct-total,
+        .ct-value {
+          font-size: 2.4rem;
+        }
+        .ct-average {
+          font-size: 1.8rem;
+
+          b {
+            font-size: 2.7rem;
+          }
+        }
+        .ct-chart--circle {
+          height: 200px;
+          padding: 0 7rem;
+        }    
+        // path
+        .ct-slice-donut {
+          stroke-width: 30px !important;
+        }
       }
       .private {
         margin-top: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 1.3rem;
       }      
-    }
+    }    
     .dropdown {
       &-box {
         font-size: 1.4rem;
@@ -273,35 +310,6 @@
       .date {
         font-size: 1.4rem;
       }
-    }
-    .chart {
-      &--circle {
-        .ct-total,
-        .ct-value {
-          font-size: 2.4rem;
-
-          span {
-            display: block;
-            line-height: 0.5;
-          }
-        }
-        .ct-average {
-          font-size: 1.8rem;
-
-          b {
-            font-size: 2.7rem;
-          }
-        }
-        .ct-chart--circle {
-          height: 200px;
-          padding: 0 7rem;
-        }            
-      }
-      .private {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        font-size: 1.3rem;
-      }      
     }
     .coinus-list--chart {
       font-size: 1.3rem;
