@@ -64,6 +64,9 @@
           @include transform(translateY(-50%));
         }
       }
+      input {
+        @include radius(5px);
+      }
     }
   }
   &-table {
@@ -102,5 +105,51 @@
         }
       }
     }
+  }
+  @include mq($until: small) {
+    & {
+      font-size: 1.3rem;
+    }
+    &-table {
+      tr {
+        &:last-child {
+          td {
+            padding-right: 2.1rem;
+          }
+        }
+      }
+      td {
+        padding: 0.2rem;
+        a {
+          display: block;
+          overflow: hidden;
+          max-width: 150px;
+        }
+      }      
+    }
+    &-utils {
+      margin-top: 1rem;
+
+      .btn {
+        font-size: inherit;
+      }
+    }    
+    .dot-list {
+      li {
+        &:before {
+          top: 7px;
+        }
+      }
+    }
+    .pagination-box {
+      margin-top: 0;
+      padding-top: 6rem;
+
+      .btn {
+        top: 15px;
+      }
+    }
+  }
+  @include mq($until: small) {
   }
 }

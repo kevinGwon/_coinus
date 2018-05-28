@@ -48,6 +48,11 @@
         color: $silver-dark;
         background: $fog;
     }
+
+    @include mq($until: medium) {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
 }
 @mixin label-pos {
   position: absolute;

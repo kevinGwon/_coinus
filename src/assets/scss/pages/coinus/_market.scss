@@ -1,10 +1,11 @@
 .coinus-market {
-  .l-market {
-    padding: 4.5rem 6rem 4rem;
+  .l-coinus {
+    padding-top: 4.5rem;
+    padding-bottom: 4rem;
     background-color: $fog;
 
     &:last-child {
-      padding-bottom: 1.5rem;
+      padding-bottom: 8.5rem;
       
       .coinus-list {
         border-bottom: 0;
@@ -63,15 +64,16 @@
         @include radius(0 0 5px 0);
       }
     }
+    &-text {
+      overflow: hidden;
+      padding: 0 0.5rem;
+    }
     &-option {
       overflow: hidden;
 
       a {
         @include break-word;
       }
-    }
-    &-text {
-      padding: 0 0.5rem;
     }
   }
   .info {
@@ -205,11 +207,36 @@
       .ct-value {
       }
     }    
+    .dropdown {
+      &-text {
+        overflow: hidden;
+        margin-right: 7rem;
+      }
+      &-option {
+        a {
+          padding-right: 7rem;
+        }
+        span {
+          display: block;
+          overflow: hidden;
+        }
+      }
+    }
   }
   @include mq($until: medium) {
-    .l-market {
-      padding-left: 2.5rem;
-      padding-right: 2.5rem;
+    .l-coinus {
+      &:first-child {
+        padding-top: 2rem;
+        padding-bottom: 2.5rem;
+      }
+    }
+    .chart {
+      &--circle {
+        margin-top: 0;
+      }
+      .private {
+        margin-top: 0;
+      }      
     }
     .dropdown {
       &-box {
@@ -233,6 +260,14 @@
           padding: 0 1rem;
         }
       }
+      &-text {
+        margin-right: 5rem;
+      }
+      &-option {
+        a {
+          padding-right: 5rem;
+        }
+      }      
     }
     .info {
       .date {

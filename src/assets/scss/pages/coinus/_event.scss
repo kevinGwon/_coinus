@@ -1,9 +1,7 @@
 .coinus-event {
-  padding: 8rem 6rem 19.5rem;
-
-  &-pd {
+  &-pad {
     margin-top: 7rem;
-    padding: 11.5rem 12rem;
+    padding: 11.5rem 5rem;
     border: 1px solid #bcbcbc;
     background-color: #e9e9e9;
   }
@@ -69,5 +67,55 @@
   }
   .pagination {
     margin-top: 4rem;
+  }
+  @include mq($until: large) {
+    &-tab {
+      a {
+        float: none;
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }
+  @include mq($until: medium) {
+    &-result {
+      font-size: 1.7rem;
+
+      em {
+        font-size: 1.8rem;
+      }
+    }
+    &-tab {
+      margin-top: 1.7rem;
+      font-size: 0;
+
+      a {
+        padding: 0.7rem 1.4rem;
+        font-size: 1.2rem;
+      }
+    }
+    &-notice {
+      text-align: center;
+
+      .h {
+        font-size: 2.1rem;
+      }
+      p {
+        margin-top: 1rem;
+        padding: 0 2rem;
+        font-size: 1.5rem;
+      }
+      em {
+        display: inline-block;
+      }
+    }
+    &-pad {
+      margin-top: 2.8rem;
+      padding: 5.5rem 1rem;
+      font-size: 1.5rem;
+    }    
+    .pagination {
+      margin-top: 4rem;
+    }    
   }
 }

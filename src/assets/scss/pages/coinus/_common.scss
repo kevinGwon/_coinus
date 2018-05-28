@@ -5,6 +5,10 @@
   background-size: cover;
   background-position: center;
 
+  .l-coinus {
+    padding: 8rem 6rem 19.5rem;
+  }
+
   .header {
     margin-bottom: 10rem;
     text-align: center;
@@ -16,7 +20,7 @@
     text-align: center;
   }
   &-box {
-    padding-bottom: 7rem;
+    // padding-bottom: 7rem;
     background-color: $ivory;
 
     &-title {
@@ -30,6 +34,9 @@
       text-align: center;
     }
   }  
+  &-box-inner {
+    padding-bottom: 7rem;
+  }
   &-list {
     @include clearfix;
     padding: 0 20px;
@@ -97,18 +104,39 @@
       } 
     }
   }
+  .btn-plus {
+    position: absolute;
+    bottom: 8px;
+    right: -10px;
+    @include transform(translateX(100%));
+  }  
   @include mq($until: large) {
+    padding: 5rem 0;
+
+    .header {
+      padding: 0 7.2rem;
+      margin-bottom: 5rem;
+    }
     &-list {
       padding: 0;
 
       &--chart {
         li {
+
+          &:before {
+            top: 70px;
+          }
           .cell {
+            @include box-sizing;
+
+            &:nth-child(1) {
+              width: 55%;
+            }
             &:nth-child(2) {
-              width: 130px;
+              width: 25%;
             }
             &:nth-child(3) {
-              width: 95px;
+              width: 20%;
 
               span {
                 display: none;
@@ -120,32 +148,91 @@
     }
   }
   @include mq($until: medium) {
+    & {
+      padding-bottom: 8.3rem;
+    }
+    .l-coinus {
+      padding: 3.2rem 1.5rem 6.5rem;
+    }    
+    .footer {
+      margin-top: 2.8rem;
+      font-size: 1.3rem;
+    }
+    &-box {
+      &-title {
+        padding: 2rem;
+        font-size: 1.9rem;
+      }
+    }
     &-list {
-      &--chart {
+      &--event {
         li {
-          display: block;
-          padding: 0;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          padding-left: 1.4rem;
+          font-size: 1.2rem;
 
           &:before {
-            top: 40px;
+            left: 0;
+            top: 23px;
+            font-size: 1.4rem;
+          }
+          .cell {
+            &:first-child {
+              span {
+                display: inline-block;
+                overflow: hidden;
+                margin-right: 2rem;
+              }
+            }
+            &:last-child {
+              width: 72px;
+            }
+          }
+          .btn {
+            font-size: 1rem;
+
+            &.btn--blue {
+              span {
+                color: #b3d6ff;
+              }
+            }
+            &.btn--gray {
+              span {
+                color: #d0d0d0;
+              }
+            }
+          }
+        }
+      }
+      &--chart {
+        li {
+          // display: block;
+          // padding: 0;
+          padding-left: 1.5rem;
+          padding-top: 1.5rem;
+          padding-bottom: 1.5rem;
+
+          &:before {
+            top: 50px;
             left: 0;
             font-size: 1.3rem;
           }
           .cell {
-            padding: 3rem 0 1.5rem;
-            @include box-sizing;
+            padding: 2.5rem 0 0;
+            width: 100%;
 
             &:nth-child(1) {
-              width: 45.3%;
-              padding-left: 2rem;
+              width: percentage(179px/310px);
+              // padding-left: 2rem;
             }
             &:nth-child(2) {
-              width: 10%;
+              width: percentage(85px/310px);
               padding-left: 0.5rem;
               padding-right: 0.5rem;
             }
             &:nth-child(3) {
-              width: 95px;
+              width: percentage(48px/310px);
             }
           }
         } 

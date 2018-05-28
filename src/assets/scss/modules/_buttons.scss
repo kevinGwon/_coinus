@@ -100,3 +100,13 @@
   text-align: center;
 }
 }
+
+@include mq($until: medium) {
+  .btn {
+    @include button-size(33px, 5px, 13px, 18px);
+
+    &--large {
+      @include button-size(45px, 48px, 14px, 18px);      
+    }
+  }
+}

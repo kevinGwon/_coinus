@@ -4,7 +4,7 @@
 module.exports = {
     SRC: 'src',                            
     PUB: 'public',                         
-    DIST: 'dist',                          
+    DIST: 'coinus',                          
     ASSETS: 'assets',                      
     PARTIAL: 'partial',                    
 
