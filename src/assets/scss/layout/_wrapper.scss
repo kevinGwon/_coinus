@@ -10,3 +10,10 @@
   max-width: 700px;
   margin: auto;
 }
+
+@include mq($until: medium) {
+  .l-wrap {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

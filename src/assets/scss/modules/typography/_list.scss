@@ -30,7 +30,7 @@
             margin-top: -($size / 2 + 2);
             left: 0;
             top: (1.5 / 2) + em;
-            background: $gray-dark;
+            background: #cdcdcd;
             @include radius(100%);
         }
     }

@@ -6,6 +6,11 @@
     padding: 2rem 3rem;
     font-size: 2rem;
   }
+  @include mq($until: medium) {
+    .coinus-box-title {
+      font-size: 1.9rem;
+    }
+  }
 }
 .coinus-popup {
   padding: 3rem 2.5rem;
@@ -106,32 +111,61 @@
       }
     }
   }
+  @include mq($until: medium) {
+    font-size: 1.8rem;
+  }
   @include mq($until: small) {
     & {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
     &-table {
+      font-size: 1.1rem;
+
       tr {
         &:last-child {
           td {
-            padding-right: 2.1rem;
+            width: 100%;
+            padding-top: 0.7rem;
+            padding-bottom: 0.7rem;
+            padding-right: 1.7rem;
           }
         }
       }
+      th, td {
+        display: block;
+        float: left;
+        width: percentage(206px/308px);
+        @include box-sizing;
+
+        &:first-child {
+          width: percentage(35px/308px);
+        }
+        &:last-child {
+          width: percentage(67px/308px);
+        }
+      }
+      th {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
       td {
-        padding: 0.2rem;
+        padding: 0.5rem 0.2rem;
+
         a {
           display: block;
           overflow: hidden;
-          max-width: 150px;
+          max-width: 200px;
         }
       }      
     }
     &-utils {
-      margin-top: 1rem;
+      margin-top: 1.8rem;
 
       .btn {
         font-size: inherit;
+      }
+      .input-search {
+        max-width: 72px;
       }
     }    
     .dot-list {
@@ -147,9 +181,8 @@
 
       .btn {
         top: 15px;
+        font-size: 1.1rem;
       }
     }
-  }
-  @include mq($until: small) {
   }
 }

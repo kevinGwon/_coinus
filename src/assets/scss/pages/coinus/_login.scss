@@ -18,7 +18,6 @@
       background-size: cover;
       background-position: center;      
     }
-
     &-box {
       padding: 0 5rem;
     }
@@ -229,5 +228,149 @@
   }
   a {
     text-decoration: none;
+  }
+  @include mq($until: large) {
+    &-login {
+      padding-right: 0;
+
+      &:after {
+        content: none;    
+      }
+    }      
+  }
+  @include mq($until: medium) {
+    &-login {
+      padding-top: 5.7rem;
+      
+      &-box {
+        padding: 0 2.5rem;
+      }
+      &-header {
+        img {
+          max-width: 58px;
+        }
+        span {
+          margin-top: 3.5rem;
+          font-size: 1.6rem;
+        }
+      }
+      &-form {
+        .input {
+          &-cell {
+            margin-top: 1.6rem;
+            font-size: 1.7rem;
+
+            .dialog {
+              left: 20px;
+
+              img {
+                width: 28px;
+              }
+            }
+            &-id,
+            &-password {
+              .dialog {
+                width: 14px;
+                height: 21px;
+              }
+              .valid + .dialog {
+
+                img {
+                  margin-left: -14px;
+                }
+              }
+            }
+          }
+          &-block {
+            padding: 1rem 1rem 1rem 5.4rem;
+            color: #bcbcbc;
+            font-size: 1.7rem;
+          }
+        }
+        .btn {
+          padding-top: 2.3rem;
+          padding-bottom: 2.3rem;
+          font-size: 1.9rem;
+        }
+        .func {
+          margin-top: 2.3rem;
+        }
+      }
+      &-utils {
+        margin-top: 5rem;
+
+        li {
+          position: relative;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          font-size: 1.4rem;
+
+          &:before {
+            top: 20px;
+          }
+          &:first-child {
+            padding-right: 12rem;
+          }
+        }
+        .btn {
+          &--make {
+            top: -5px;
+            height: 52px;
+            font-size: 1.7rem;
+            line-height: 37px;
+          }
+          &--faq {
+            display: inline-block;
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }  
+    &-login--make {
+      padding-bottom: 7.5rem;
+
+      .input {
+        &-cell-email {
+          margin-right: 66px;
+
+          .btn {
+            right: -66px;
+            width: 60px;
+            padding: 0;
+            line-height: 42px;
+          }
+        }
+        &-block {
+          padding-left: 2rem;
+        }    
+      }
+      .checkbox {
+        @include break-word;
+
+        label {
+          font-size: 1.6rem;
+        }
+        a {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    &-login--success {
+      .cont {
+        .b {
+          font-size: 3.3rem;
+        }
+        em {
+          font-size: 2.2rem;
+        }
+        p {
+          margin: 1rem 0;
+          font-size: 2.1rem;
+        }
+      }
+      .func {
+        margin-top: 6.5rem;
+      }
+    }    
   }
 }

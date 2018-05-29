@@ -119,7 +119,10 @@
       .ct-chart--circle {
         height: 308px;
         padding: 0 20rem;
-      }        
+      } 
+      .ct-slice-donut {
+        stroke-width: 65px !important;
+      }
     }
     .private {
       display: inline-block;
