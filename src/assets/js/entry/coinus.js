@@ -9,7 +9,7 @@ class Coinus {
   init() {
     this.v = 0;
     this.total = 0;
-    this.DUR = 0.5;
+    this.DUR = 0.7;
 
     this.$chartCircle = $('.ct-chart--circle');
     this.$chartBar = $('.ct-chart--bar');
