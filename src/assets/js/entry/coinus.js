@@ -13,9 +13,11 @@ class Coinus {
 
     this.$chartCircle = $('.ct-chart--circle');
     this.$chartBar = $('.ct-chart--bar');
+    this.$selecbox = $('.selectbox');
 
     this.$chartBar.length && this.chartBar();
     this.$chartCircle.length && this.chartCircle();
+    this.$selecbox.length && this.selectToggle();
   }
   chartBar() {
     this.$chartBar.each((i, el)=>{
@@ -102,6 +104,21 @@ class Coinus {
       }, 1);
     }   
   }  
+  selectToggle() {
+    this.$selecbox.on({
+      'click': function(){
+        let $el = $(this);
+        $el.toggleClass('is-toggle');
+      },
+      'focusout': function(){
+        let $el = $(this);
+
+        if($el.hasClass('is-toggle')) {
+          $el.toggleClass('is-toggle');
+        }
+      }
+    });
+  }
   addNum($target, num) {
     num = Math.ceil(num);
     $target.html(Math.ceil(num)+'%');

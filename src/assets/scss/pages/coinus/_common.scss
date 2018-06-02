@@ -78,6 +78,35 @@
     select {
       min-width: 300px;
     }
+    .selectbox {
+      position: relative;
+
+      &.is-toggle {
+        &:after {
+          @include transform(scale(0.7) rotate(180deg));
+        }
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 35px;
+        border-left: 1px solid #c1c1c1;
+      }
+      @include icon('arrow-bottom', 'after') {
+        position: absolute;
+        top: 50%;
+        right: 9px;
+        margin-top: -6px;
+        font-size: 1rem;
+        @include transform(scale(0.7));
+      }
+      select {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
     .label {
       @include label-pos;
       color: inherit;
@@ -152,12 +181,16 @@
         }        
         .input-block {
         }
-        select {
+        .selectbox {
           height: 100%;
-          min-width: auto;
-          margin-left: 5px;
-          text-transform: uppercase;
-          background-position-x: 87%;
+          
+          select {
+            height: 100%;
+            min-width: 90px;
+            margin-left: 0;
+            padding-left: 0.7rem;
+            text-transform: uppercase;
+          }
         }
       }
     }
@@ -404,10 +437,10 @@
             @include box-sizing;
 
             &:nth-child(1) {
-              width: 55%;
+              width: 57%;
             }
             &:nth-child(2) {
-              width: 25%;
+              width: 23%;
             }
             &:nth-child(3) {
               width: 20%;
@@ -542,7 +575,7 @@
           }
           &-inner {
             &:first-child {
-              padding-right: 8.2rem;
+              padding-right: 10rem;
             }
           }
         }
@@ -563,6 +596,9 @@
           }
         }
       }
+      .selectbox {
+        width: 100%;
+      }    
       .label {
         top: -3px;
         @include transform(translateY(-100%));
@@ -574,7 +610,7 @@
       width: 28px;
       height: 28px;
       @include transform(translateX(0));
-    }    
+    }
     &-box {
       &-title {
         padding: 2rem;
@@ -586,7 +622,7 @@
         &.is-edit {
           li {
             &:before  {
-              top: 12px;
+              top: 14px;
             }
           }
           .cell {
@@ -603,11 +639,13 @@
 
           &:before {
             left: 0;
-            top: 18px;
+            top: 20px;
             font-size: 1.4rem;
           }
           .cell {
             &:first-child {
+              line-height: 1;
+
               span {
                 display: inline-block;
                 overflow: hidden;
@@ -656,16 +694,16 @@
             width: 100%;
 
             &:nth-child(1) {
-              width: percentage(179px/310px);
+              width: 100%;
               // padding-left: 2rem;
             }
             &:nth-child(2) {
-              width: percentage(85px/310px);
+              width: 75px;
               padding-left: 0.5rem;
               padding-right: 0.5rem;
             }
             &:nth-child(3) {
-              width: percentage(48px/310px);
+              width: 48px;
             }
           }
         } 

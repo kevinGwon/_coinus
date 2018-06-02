@@ -307,7 +307,7 @@ select {
     @extend %form-control;
     padding-right: 40px;
 
-    background: $white url(../image/a/arrow-bottom.svg) 95% 50% no-repeat;
+    // background: $white url(../image/a/arrow-bottom.svg) 95% 50% no-repeat;
 
     .no-svgasimg & {
         background-image: url(../image/a/arrow-bottom.png);

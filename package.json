@@ -48,6 +48,7 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "@fengyuanchen/datepicker": "^0.6.5",
     "fastclick": "^1.0.6",
     "gsap": "^1.19.1",
     "imagesloaded": "^4.1.3",

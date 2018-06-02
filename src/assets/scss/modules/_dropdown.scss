@@ -62,6 +62,7 @@
 			top: 10px;
 			right: 10px;
 			font-size: 1rem;
+			@include transform(scale(0.7));
 		}
 
 		.is-active > & {

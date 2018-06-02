@@ -71,39 +71,45 @@
                     <label class="label" for="input-8">프로젝트 기간</label>
                     <div class="cell">
                       <div class="cell-inner">
-                        <input type="text" id="input-8" class="input-block" value="2018년 05월 18일">
+                        <input type="text" id="input-8" class="input-block" value="" data-toggle="datepicker">
                       </div>
                       <div class="cell-inner">
-                        <select name="select" id="select-1">
-                          <option value="project-1">utc</option>
-                          <option value="project-2">00</option>
-                          <option value="project-3">01</option>
-                          <option value="project-4">02</option>
-                        </select>               
+                        <div class="selectbox">
+                          <select name="select" id="select-1">
+                            <option value="project-1">utc</option>
+                            <option value="project-2">00</option>
+                            <option value="project-3">01</option>
+                            <option value="project-4">02</option>
+                          </select>             
+                        </div>  
                       </div>       
                     </div>
                     <div class="cell">
                       <div class="cell-inner">
                         <label class="a11y" for="input-9">내용</label>
-                        <input type="text" id="input-9" class="input-block" value="2018년 05월 18일">
+                        <input type="text" id="input-9" class="input-block" value="" data-toggle="datepicker">
                       </div>
                       <div class="cell-inner">
-                        <select name="select" id="select-2">
-                          <option value="project-1">utc</option>
-                          <option value="project-2">00</option>
-                          <option value="project-3">01</option>
-                          <option value="project-4">02</option>
-                        </select>               
+                        <div class="selectbox">
+                          <select name="select" id="select-2">
+                            <option value="project-1">utc</option>
+                            <option value="project-2">00</option>
+                            <option value="project-3">01</option>
+                            <option value="project-4">02</option>
+                          </select>              
+                        </div> 
                       </div>       
                     </div>
                   </div>
                 </li>   
                 <li>
                   <label class="label" for="select-3">프로젝트 선택</label>
-                  <select name="select" id="select-3">
-                    <option value="project-1">Private</option>
-                    <option value="project-2">Public</option>
-                  </select>
+                  <div class="selectbox">
+                    <select name="select" id="select-3">
+                      <option value="project-1">Private</option>
+                      <option value="project-2">Public</option>
+                    </select>
+                  </div>
                 </li>
                 <li>
                   <label class="label" for="input-10">CAP</label>
@@ -136,11 +142,13 @@
                 </li>
                 <li>
                   <label class="label" for="select-4">KYC 인증단계</label>
-                  <select name="select" id="select-4">
-                    <option value="step-1">1단계</option>
-                    <option value="step-2">2단계</option>
-                    <option value="step-3">3단계</option>
-                  </select>  
+                  <div class="selectbox">
+                    <select name="select" id="select-4">
+                      <option value="step-1">1단계</option>
+                      <option value="step-2">2단계</option>
+                      <option value="step-3">3단계</option>
+                    </select>  
+                  </div>
                 </li>                               
                 <li class="fixed">
                   <button type="button" class="label">레퍼럴 코드 생성</button>
@@ -202,4 +210,6 @@
   </div>
 </div>
 {{/layout}}
-{{#*inline 'script'}}{{/inline}}
+{{#*inline 'script'}}
+  <script src="/assets/js/datepicker.js"></script>
+{{/inline}}
