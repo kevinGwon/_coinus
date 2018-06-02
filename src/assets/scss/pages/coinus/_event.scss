@@ -71,9 +71,11 @@
   @include mq($until: large) {
     &-tab {
       a {
-        float: none;
         display: inline-block;
+        float: none;
         width: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
     }
   }
@@ -90,7 +92,7 @@
       font-size: 0;
 
       a {
-        padding: 0.7rem 1.4rem;
+        padding: 1rem;
         font-size: 1.2rem;
       }
     }

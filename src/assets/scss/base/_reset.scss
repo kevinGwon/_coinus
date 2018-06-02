@@ -6,6 +6,7 @@ html {
     font-size: 62.5%;
 }
 body {
+    background-color: $brand;
     font-size: 1em;
     line-height: 1.5;
 }
@@ -132,7 +133,6 @@ input,
 textarea,
 select,
 button {
-    color: $dark;
     font-family: $font-default;
 }
 h1, h2, h3, h4, h5, h6 {

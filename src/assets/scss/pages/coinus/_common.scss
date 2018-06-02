@@ -1,9 +1,11 @@
 .coinus {
+  height: 130vh;
   padding: 10rem 0;
   background-image: url('../image/a/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: $brand;
 
   .l-coinus {
     padding: 8rem 6rem 19.5rem;
@@ -70,6 +72,8 @@
       width: 100%;
       resize: none;
       min-height: 300px;
+      padding-left: 14px;
+      padding-right: 14px;
     }
     select {
       min-width: 300px;
@@ -117,20 +121,79 @@
       margin: 0 -21px;
 
       .cell {
+        position: relative;
         float: left;
         width: 50%;
         padding: 0 21px;
         @include box-sizing;
 
         &:last-child {
-          &:after {
+          &:before {
             content: '';
             display: inline-block;
             position: absolute;
             width: 20px;
-            margin-top: -20px;
+            margin-top: 20px;
             margin-left: -30px;
             border-bottom: 1px solid $silver;
+          }
+        }
+        &-inner {
+          &:first-child {
+            padding-right: 97px;
+          }
+          &:last-child {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            right: 21px;
+          }
+        }        
+        .input-block {
+        }
+        select {
+          height: 100%;
+          min-width: auto;
+          margin-left: 5px;
+          text-transform: uppercase;
+          background-position-x: 87%;
+        }
+      }
+    }
+    &-value {
+      @include clearfix;
+      margin-right: -58px;
+
+      .cell {
+        position: relative;
+        float: left;
+        width: percentage(1/2);
+
+        &:last-child {
+          &:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: 20px;
+            margin-top: 20px;
+            margin-left: -40px;
+            border-bottom: 1px solid $silver;
+          }
+        }
+        &-inner {
+          &:first-child {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            @include transform(translateY(-50%));
+          }
+          &:last-child {
+            padding-left: 50px;
+            padding-right: 58px;
+          }
+          span {
+            font-size: 2rem;
           }
         }
       }
@@ -198,6 +261,9 @@
             }
           }
         }
+        .input-block {
+          font-size: 2rem;
+        }
       }
     }
   }  
@@ -212,7 +278,7 @@
 
     &-title {
       padding: 3rem 5rem;
-      background-color: $d-blue;
+      background-color: $dd-blue;
       color: $white;
       font-size: 3rem;
     } 
@@ -271,7 +337,23 @@
         width: 100%;
       }
     }
+    &--event {
+      &.is-edit {
+        .cell {
+          &:last-child {
+            text-align: right;
+            width: 240px;
+          }
+        }
+        .btn {
+          width: auto;
 
+          & + .btn {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
     &--chart {
       li {
 
@@ -291,6 +373,12 @@
         }
       } 
     }
+  }
+  @include mq($until: 2000px) {
+    & {
+      height: auto;
+    }
+
   }
   @include mq($until: large) {
     padding: 5rem 0;
@@ -341,7 +429,7 @@
       padding: 3.2rem 1.5rem 6.5rem;
     }
     .header {
-      margin-bottom: 2.5rem;
+      margin-bottom: 4rem;
       padding: 0 10.1rem;
     }
     .footer {
@@ -418,6 +506,9 @@
                 label {
                   line-height: 34px;
                 }
+                input {
+                  font-size: 1.6rem;
+                }
               }  
               .btn {
                 height: 34px;
@@ -436,6 +527,40 @@
               }
             }
           }          
+        }
+      }
+      &-grid {
+        .cell {
+          float: none;
+          width: 100%;
+
+          &:before {
+            content: none !important;
+          }
+          & + .cell {
+            margin-top: 1rem;
+          }
+          &-inner {
+            &:first-child {
+              padding-right: 8.2rem;
+            }
+          }
+        }
+      }
+      &-value {
+        .cell {
+          float: none;
+          width: 100%;
+          margin-top: 1rem;
+
+          &:before {
+            content: none !important;
+          }
+          &-inner {
+            span {
+              font-size: 1.5rem;
+            }
+          }
         }
       }
       .label {
@@ -458,6 +583,18 @@
     }
     &-list {
       &--event {
+        &.is-edit {
+          li {
+            &:before  {
+              top: 12px;
+            }
+          }
+          .cell {
+            &:last-child {
+              width: 150px;
+            }
+          }
+        }
         li {
           padding-top: 1rem;
           padding-bottom: 1rem;
@@ -466,7 +603,7 @@
 
           &:before {
             left: 0;
-            top: 23px;
+            top: 18px;
             font-size: 1.4rem;
           }
           .cell {
@@ -483,7 +620,11 @@
           }
           .btn {
             font-size: 1rem;
+            line-height: 1.4;
 
+            span {
+              font-weight: bold;
+            }
             &.btn--blue {
               span {
                 color: #b3d6ff;

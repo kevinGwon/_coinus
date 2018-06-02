@@ -37,7 +37,8 @@
   .func {
     .btn {
       padding: 0.5rem 2rem;
-      font-size: 1.3rem;
+      font-weight: bold;
+      font-size: 1.4rem;
     }
   }
   &-utils {
@@ -53,7 +54,7 @@
     }
     .input-search {
       position: relative;
-      max-width: 115px;
+      max-width: 135px;
 
       label {
         display: block;
@@ -70,6 +71,8 @@
         }
       }
       input {
+        height: 40px;
+        padding-right: 35px;
         @include radius(5px);
       }
     }
@@ -107,6 +110,23 @@
           &:after {
             content: none;
           }
+        }
+      }
+    }
+    &.no-result {
+      min-height: 450px;
+
+      tr {
+        img {
+          display: block;
+          margin: 0 auto 3.5rem;
+        }
+        td {
+          width: 100%;
+          padding: 0;
+          border: 0;
+          text-align: center !important;
+          font-size: 2rem;
         }
       }
     }
@@ -156,6 +176,20 @@
           overflow: hidden;
           max-width: 200px;
         }
+      }
+      &.no-result {
+        min-height: auto;
+        padding: 5rem 0;
+
+        img {
+          max-width: 50px;
+        }
+        tr {
+          td {
+            padding: 0;
+            font-size: 1.4rem;
+          }
+        }
       }      
     }
     &-utils {
@@ -166,8 +200,17 @@
       }
       .input-search {
         max-width: 72px;
+
+        input {
+          height: 33px;
+        }
       }
-    }    
+    }
+    .func {
+      .btn {
+        font-size: 1.1rem;
+      }
+    }
     .dot-list {
       li {
         &:before {

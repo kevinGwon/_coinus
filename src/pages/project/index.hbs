@@ -68,23 +68,41 @@
               <ul class="dot-list form-list">
                 <li>
                   <div class="form-list-grid">
+                    <label class="label" for="input-8">프로젝트 기간</label>
                     <div class="cell">
-                      <label class="label" for="input-8">프로젝트 기간</label>
-                      <input type="text" id="input-8" class="input-block" value="2018년 05월 18일">
+                      <div class="cell-inner">
+                        <input type="text" id="input-8" class="input-block" value="2018년 05월 18일">
+                      </div>
+                      <div class="cell-inner">
+                        <select name="select" id="select-1">
+                          <option value="project-1">utc</option>
+                          <option value="project-2">00</option>
+                          <option value="project-3">01</option>
+                          <option value="project-4">02</option>
+                        </select>               
+                      </div>       
                     </div>
                     <div class="cell">
-                      <label class="a11y" for="input-9">내용</label>
-                      <input type="text" id="input-9" class="input-block" value="2018년 05월 18일">
+                      <div class="cell-inner">
+                        <label class="a11y" for="input-9">내용</label>
+                        <input type="text" id="input-9" class="input-block" value="2018년 05월 18일">
+                      </div>
+                      <div class="cell-inner">
+                        <select name="select" id="select-2">
+                          <option value="project-1">utc</option>
+                          <option value="project-2">00</option>
+                          <option value="project-3">01</option>
+                          <option value="project-4">02</option>
+                        </select>               
+                      </div>       
                     </div>
                   </div>
                 </li>   
                 <li>
-                  <label class="label" for="select">프로젝트 선택</label>
-                  <select name="select" id="select">
-                    <option value="project-1">프로젝트 1</option>
-                    <option value="project-2">프로젝트 2</option>
-                    <option value="project-3">프로젝트 3</option>
-                    <option value="project-4">프로젝트 4</option>
+                  <label class="label" for="select-3">프로젝트 선택</label>
+                  <select name="select" id="select-3">
+                    <option value="project-1">Private</option>
+                    <option value="project-2">Public</option>
                   </select>
                 </li>
                 <li>
@@ -92,13 +110,38 @@
                   <input type="text" id="input-10" class="input-block" value="2,000 ETH"> 
                 </li> 
                 <li>
-                  <label class="label" for="input-11">개인 CAP</label>
-                  <input type="text" id="input-11" class="input-block" value="최소 0.001 ETH --------- 최대 100,000ETH"> 
+                  <div class="form-list-value">
+                    <label class="label" for="input-11">개인 CAP</label>
+                    <div class="cell">
+                      <div class="cell-inner">
+                        <span>최소</span>
+                      </div>
+                      <div class="cell-inner">
+                        <input type="text" id="input-11" class="input-block" value="0.001 ETH"> 
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <div class="cell-inner">
+                        <span>최대</span>
+                      </div>
+                      <div class="cell-inner">
+                        <input type="text" id="input-11" class="input-block" value="100.000 ETH"> 
+                      </div>
+                    </div>
+                  </div>
                 </li>  
                 <li>
                   <label class="label" for="input-12">교환비율</label>
                   <input type="text" id="input-12" class="input-block" value="1ETH --------- 20,000 CNUS"> 
-                </li>              
+                </li>
+                <li>
+                  <label class="label" for="select-4">KYC 인증단계</label>
+                  <select name="select" id="select-4">
+                    <option value="step-1">1단계</option>
+                    <option value="step-2">2단계</option>
+                    <option value="step-3">3단계</option>
+                  </select>  
+                </li>                               
                 <li class="fixed">
                   <button type="button" class="label">레퍼럴 코드 생성</button>
                   <ul class="form-list-code">
@@ -112,7 +155,7 @@
                           <button type="button" class="btn btn--pink">코드생성</button>
                         </div>
                         <div class="cell">
-                          <span class="">apple354</span>
+                          <span lang="en">apple354</span>
                         </div>
                       </div>
                     </li>
@@ -126,7 +169,7 @@
                           <button type="button" class="btn btn--pink">코드생성</button>
                         </div>
                         <div class="cell">
-                          <span class="">apple354</span>
+                          <span lang="en">apple354</span>
                         </div>
                       </div>
                     </li>
@@ -140,7 +183,7 @@
                           <button type="button" class="btn btn--pink">코드생성</button>
                         </div>
                         <div class="cell">
-                          <span class="">apple354</span>
+                          <span lang="en">apple354</span>
                         </div>
                       </div>
                     </li>

@@ -32,6 +32,7 @@
       }
     }
     &-form {
+      position: relative;
       margin-top: 3rem;
 
       .input {
@@ -87,7 +88,7 @@
             color: inherit !important;
           }
           &.error {
-            border-color: $pink !important;
+            border: 2px solid $error !important;
           }
           &::placeholder {
             color: #bcbcbc;
@@ -135,6 +136,14 @@
           }
         }
       }
+    }
+    &-error {
+      position: absolute;
+      bottom: -4.5rem;
+      left: 0.5rem;
+      color: $error;
+      font-weight: bold;
+      font-size: 1.8rem;
     }
   }  
   &-login--make,
@@ -202,10 +211,16 @@
       }
       a {
         border-bottom: 1px solid $gray-dark;
+        margin-left: 2.7rem;
       }
     }
   }
   &-login--success {
+    padding-bottom: 14.6rem;
+
+    .coinus-login-form {
+      margin-top: 10.2rem;
+    }
     .cont {
       text-align: center;
 
@@ -297,7 +312,7 @@
         }
       }
       &-utils {
-        margin-top: 5rem;
+        margin-top: 3rem;
 
         li {
           position: relative;
@@ -324,6 +339,10 @@
             margin-left: 0.5rem;
           }
         }
+      }
+      &-error {
+        bottom: -3.2rem;
+        font-size: 1.4rem;
       }
     }  
     &-login--make {
@@ -356,6 +375,11 @@
       }
     }
     &-login--success {
+      padding-bottom: 7rem;
+      
+      .coinus-login-form {
+        margin-top: 5rem;
+      }
       .cont {
         .b {
           font-size: 3.3rem;

@@ -24,6 +24,7 @@
   .dropdown {
     color: inherit;
     background-color: transparent;
+    font-size: 2rem;
 
     &-box {
       display: table;
@@ -32,18 +33,8 @@
       border: 1px solid $silver;
       border-top: 2px solid $pink;
       background-color: $white;
-      font-size: 2rem;
       @include radius(0 0 5px 5px);
 
-      &-cell {
-        display: table-cell;
-        vertical-align: middle;
-        font-size: inherit;
-
-        &:first-child {
-          width: 190px;
-        }
-      }
       .align-right {
         text-align: right; 
         font-size: inherit;
@@ -51,7 +42,8 @@
     }
     &-selector {
       overflow: hidden;
-      padding: 1.1rem 0;
+      height: 60px;
+      padding: 1rem 0 1.1rem 2rem;
 
       &:after {
         top: 0;
@@ -65,15 +57,22 @@
       }
     }
     &-text {
-      overflow: hidden;
-      padding: 0 0.5rem;
+      display: block;
+      min-width: 752px;
     }
     &-option {
       overflow: hidden;
-
-      a {
-        @include break-word;
+      @include radius(0 0 5px 5px);
+      
+      li {
+        padding: 0.7rem 0;
       }
+      a {
+        overflow: hidden;
+      }
+    }
+    .fix {
+      display: inline-block;
     }
   }
   .info {
@@ -81,6 +80,10 @@
       margin-bottom: 2rem;
       text-align: center;
       font-size: 2.4rem;
+    }
+    img {
+      margin-top: -7px;
+      vertical-align: middle;
     }
   }
   .chart {
@@ -138,19 +141,30 @@
     position: relative;
     background-color: $fog;
     @include shadow(0 0 1px 1px rgba($silver, 0.3) inset);
+    text-align: center;
 
     .ct-value {
-      display: block;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      top: -4px;
+      height: 100%;
       color: $white;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
       text-transform: uppercase;
       text-align: center;
       line-height: 25px;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 1px rgba($black, 0.5);
 
+      &--bar {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;      
+        background-color: $pink;
+      }
       &.is-invert {
         color: $gray-light;
 
@@ -163,10 +177,11 @@
       display: inline-block;
       position: absolute;
       top: -15px;
-      right: 0;
+      right: -5px;
       z-index: 100;
       padding: 0.2rem 0.5rem;
       background-color: $pink;
+      text-shadow: none;
       @include transform(translate(50%, -100%));
       @include radius(3px);
 
@@ -179,15 +194,14 @@
         @include transform(translateX(-50%));
       }
     }
-    .ct-value {
-      background-color: $pink;
-    }
   }
   @include mq($until: large) {
     .chart {
       &--circle {
         .ct-total,
         .ct-value {
+          font-size: 3rem;
+
           span {
             display: block;
             line-height: 0.5;
@@ -228,11 +242,18 @@
       }
       &-option {
         a {
+          margin-right: 4rem;
           padding-right: 7rem;
+
+          > span {
+            margin-right: 20px;
+            overflow: hidden;
+          }
         }
+      }
+      .fix {
         span {
-          display: block;
-          overflow: hidden;
+          display: none;
         }
       }
     }
@@ -253,7 +274,7 @@
         }
         .ct-total,
         .ct-value {
-          font-size: 2.4rem;
+          font-size: 2.1rem;
         }
         .ct-average {
           font-size: 1.8rem;
@@ -279,6 +300,8 @@
       }      
     }    
     .dropdown {
+      font-size: 1.5rem;
+
       &-box {
         font-size: 1.4rem;
 
@@ -295,17 +318,43 @@
       }
       &-selector {
         min-width: auto;
+        height: 40px;
+        padding-left: 1.5rem;
 
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          height: 100%;
+          width: 55px;
+          background-color: $white;
+          @include radius(4px);
+        }
         &:after {
           padding: 0 1rem;
+          height: 40px;
+          line-height: 40px;
         }
       }
       &-text {
         margin-right: 5rem;
+        line-height: 1.4;
+        font-size: 1.5rem;
+
+        a {
+          margin-right: 40px;
+        }
       }
       &-option {
         a {
+          margin-right: 5.5rem;
           padding-right: 5rem;
+          padding-left: 1.5rem;
+          line-height: 2.6rem;
         }
       }      
     }
@@ -313,15 +362,20 @@
       .date {
         font-size: 1.4rem;
       }
+      img {
+        margin-top: -4px;
+        max-width: 18px;
+      }
     }
     .coinus-list--chart {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
     }
     .ct-chart--bar {
       .ct-average {
         top: -10px;
       }
       .ct-value {
+        top: 0;
         font-size: inherit;
       }
     }

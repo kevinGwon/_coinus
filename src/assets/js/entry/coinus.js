@@ -23,14 +23,14 @@ class Coinus {
           value = $el.data('value'),
           total = $el.data('total'),
           unit = $el.data('unit'),
-          average = ((value/total)*100).toFixed(1);
+          average = ((value/total)*100).toFixed(0);
 
           this.total += total;
           this.v += value;
 
-      $el.append('<div lang="en" class="ct-value">'+value+unit+'<span lang="en" class="ct-average">'+average+'%</span></div>');
+      $el.append('<div class="ct-value--bar"></div><div class="ct-value">'+value+unit+'<span lang="en" class="ct-average">'+average+'%</span></div>');
 
-      let $value = $el.find('.ct-value');
+      let $value = $el.find('.ct-value--bar');
 
       $value.css('width', average+'%');
 

@@ -120,7 +120,7 @@ var Dropdown = (function() {
                     if ($list.has('.is-current').length || $list.find(':checked').length) {
                         if (islink) {
                             $list.find('.is-current').addClass('is-active');
-                            $selected.text($list.find('.is-current').text());
+                            $selected.html($list.find('.is-current').html());
                         } else {
                             top = $(window).scrollTop();
                             $list.find(':checked').parent().click();
