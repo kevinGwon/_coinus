@@ -22,7 +22,8 @@ module.exports = {
         'Sine': false,
         'CustomEase': false,
         'google': false,
-        'Modernizr': false
+        'Modernizr': false,
+        'Chartist': false
     },
     'rules': {
         'indent': ['warn', 4, {'SwitchCase': 1}],
