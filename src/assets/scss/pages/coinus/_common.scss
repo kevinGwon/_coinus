@@ -371,11 +371,11 @@
       }
     }
     &--event {
-      &.is-edit {
+      li {
         .cell {
           &:last-child {
             text-align: right;
-            width: 240px;
+            width: 300px;
           }
         }
         .btn {
@@ -619,15 +619,11 @@
     }
     &-list {
       &--event {
-        &.is-edit {
+
+        &.is-finish {
           li {
-            &:before  {
+            &:before {
               top: 14px;
-            }
-          }
-          .cell {
-            &:last-child {
-              width: 150px;
             }
           }
         }
@@ -643,6 +639,8 @@
             font-size: 1.4rem;
           }
           .cell {
+            overflow: hidden;
+            
             &:first-child {
               line-height: 1;
 
@@ -653,7 +651,11 @@
               }
             }
             &:last-child {
-              width: 72px;
+              width: 160px;
+
+              .btn--blue {
+                width: 67px;
+              }
             }
           }
           .btn {

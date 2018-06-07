@@ -16,7 +16,7 @@ class Datepicker {
       weekStart: 1,
       startView: 0,
       yearFirst: true,
-      autoHide: true
+      autoHide: true   
     });
   }
 
