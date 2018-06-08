@@ -28,12 +28,12 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendor'),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            TweenMax: 'gsap'
-        }),
+        // new webpack.optimize.CommonsChunkPlugin('vendor'),
+        // new webpack.ProvidePlugin({
+        //     $: 'jquery',
+        //     jQuery: 'jquery',
+        //     TweenMax: 'gsap'
+        // }),
     ],
 
     module: {

@@ -10,6 +10,7 @@ const config = require('./config'),
     htmlbeautify = require('gulp-html-beautify'),
     noop = require('gulp-noop'),
     glob = require('glob'),
+    replace = require('gulp-replace'),
     wrap = require('gulp-wrap');
 
 module.exports = (gulp, paths) => {
@@ -204,6 +205,8 @@ module.exports = (gulp, paths) => {
                     extra_liners: []
                 }
             }))
+
+            // .pipe(replace('/assets', '/coinus/assets'))
 
             // html 파일로 확장자 변경
             .pipe(rename((path) => {
